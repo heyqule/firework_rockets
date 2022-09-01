@@ -1,0 +1,12 @@
+{
+  "name": "firework_rockets",
+  "version": "0.1.0",
+  "date": "2022-08-29",
+  "title": "Firework Rockets",
+  "author": "heyqule",
+  "description": "Let you shoot firework rockets.",
+  "factorio_version": "1.1",
+  "dependencies": [
+    "base >= 1.1.0"
+  ]
+}

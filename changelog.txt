@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2022-08-31
+
+  Features:
+    - Added 9 variants of firework
+    - Added 4 types of firework rockets
+    - They can be launched from rocket launcher and the spidertron
+    - Cool firework rockets shoot cool color fireworks
+    - Warm firework rockets shoot warm color fireworks
+    - Colorful firework rockets shoot multi-colors fireworks
+    - Random firework rockets shoot all the above.
+    - ----------------------------------------------------
+    - Added mortar crate to automatically deploy firework.
