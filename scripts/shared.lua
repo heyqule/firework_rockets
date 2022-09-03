@@ -24,21 +24,29 @@ local warm_firework = {
     'firework-trail-firework-2-orange-1',
     'firework-trail-firework-3-red-1',
     'firework-trail-firework-3-pink-1',
+    'firework-trail-firework-5-pink-1-5',
+    'firework-trail-firework-5-yellow-1-5',
+    'firework-trail-firework-6-red-1',
+    'firework-trail-firework-6-yellow-1',
 }
+
 local warm_firework_size = #warm_firework
 
 local cool_firework = {
+    'firework-trail-firework-5-purple-1-5',
     'firework-trail-firework-1-purple-1',
     'firework-trail-firework-1-green-1',
     'firework-trail-firework-2-blue-1',
     'firework-trail-firework-2-purple-1',
-    'firework-trail-firework-3-green-1'
+    'firework-trail-firework-3-green-1',
+    'firework-trail-firework-6-white-1'
 }
 local cool_firework_size = #cool_firework
 
 local colorful_firework = {
-    'firework-trail-firework-2-purple-1',
-    'firework-trail-firework-3-green-1'
+    'firework-trail-firework-4-v1-1',
+    'firework-trail-firework-4-v2-1',
+    'firework-trail-firework-4-v3-1',
 }
 local colorful_firework_size = #colorful_firework
 

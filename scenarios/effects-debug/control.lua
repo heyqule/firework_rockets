@@ -1,5 +1,5 @@
 require('util')
-local scenarios_helper = require('__enemyracemanager__/scenarios/shared.lua')
+--local scenarios_helper = require('__enemyracemanager__/scenarios/shared.lua')
 
 local Event = require('__stdlib__/stdlib/event/event')
 
@@ -8,7 +8,7 @@ Event.register(defines.events.on_player_created, function(event)
     local player = game.players[1]
     local force = player.force
 
-    --scenarios_helper.spawn_lab_tiles(surface)
+ --   scenarios_helper.spawn_lab_tiles(surface)
     surface.daytime = 0.5
     --surface.daytime = 1
     surface.freeze_daytime = true
@@ -23,15 +23,15 @@ end)
 local firework_explosions = function(surface)
 
     local projectile_types = {
-        'firework-trail-firework-1-green-1',
-        'firework-trail-firework-1-orange-1',
-        'firework-trail-firework-1-purple-1',
-        'firework-trail-firework-2-orange-1',
-        'firework-trail-firework-2-purple-1',
-        'firework-trail-firework-2-blue-1',
-        'firework-trail-firework-3-green-1',
-        'firework-trail-firework-3-red-1',
-        'firework-trail-firework-3-pink-1',
+        'firework-trail-firework-4-v1-1',
+        'firework-trail-firework-4-v2-1',
+        'firework-trail-firework-4-v3-1',
+        'firework-trail-firework-5-pink-1-5',
+        'firework-trail-firework-5-purple-1-5',
+        'firework-trail-firework-5-yellow-1-5',
+        'firework-trail-firework-6-red-1',
+        'firework-trail-firework-6-white-1',
+        'firework-trail-firework-6-yellow-1'
     }
 
     for key, value in pairs(projectile_types) do

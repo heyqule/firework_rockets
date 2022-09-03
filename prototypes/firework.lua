@@ -203,3 +203,159 @@ local firework_3_data = {
 for _, firework_object in pairs(firework_3_data) do
     data:extend({ build_firework(firework_object) })
 end
+
+local firework_4_data = {
+    {
+        version = 4,
+        type = "v1",
+        width = 469,
+        height = 468,
+        line_length = 7,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 0.75,
+        lighting_color = SharedFunctions.get_color('white'),
+        lighting_size =10,
+        lighting_shift = {-0.5, -1}
+    },
+    {
+        version = 4,
+        type = "v2",
+        width = 545,
+        height = 532,
+        line_length = 7,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 0.75,
+        lighting_color = SharedFunctions.get_color('white'),
+        lighting_size = 10,
+        lighting_shift = {0, -1},
+    },
+    {
+        version = 4,
+        type = "v3",
+        width = 529,
+        height = 482,
+        line_length = 6,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 0.75,
+        lighting_color = SharedFunctions.get_color('white'),
+        lighting_size = 10,
+        lighting_shift = {0, -1}
+    }
+}
+
+for _, firework_object in pairs(firework_4_data) do
+    data:extend({ build_firework(firework_object) })
+end
+
+local firework_5_data = {
+    {
+        version = 5,
+        type = "pink",
+        width = 335,
+        height = 336,
+        line_length = 9,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1.5,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('yellow'),
+        lighting_size = 15,
+        lighting_shift = {-0.5, -1}
+    },
+    {
+        version = 5,
+        type = "purple",
+        width = 329,
+        height = 332,
+        line_length = 9,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1.5,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('purple'),
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+    },
+    {
+        version = 5,
+        type = "yellow",
+        width = 335,
+        height = 338,
+        line_length = 9,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1.5,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('pink'),
+        lighting_size = 10,
+        lighting_shift = {0, -1}
+    }
+}
+
+for _, firework_object in pairs(firework_5_data) do
+    data:extend({ build_firework(firework_object) })
+end
+
+local firework_6_data = {
+    {
+        version = 6,
+        type = "yellow",
+        width = 527,
+        height = 503,
+        line_length = 7,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('yellow'),
+        lighting_size = 15,
+        lighting_shift = {0, -1}
+    },
+    {
+        version = 6,
+        type = "white",
+        width = 453,
+        height = 445,
+        line_length = 7,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('white'),
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+    },
+    {
+        version = 6,
+        type = "red",
+        width = 459,
+        height = 479,
+        line_length = 7,
+        frame_count = 42,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        lighting_intensity = 1,
+        lighting_color = SharedFunctions.get_color('red'),
+        lighting_size = 10,
+        lighting_shift = {0, -1}
+    }
+}
+
+for _, firework_object in pairs(firework_6_data) do
+    data:extend({ build_firework(firework_object) })
+end

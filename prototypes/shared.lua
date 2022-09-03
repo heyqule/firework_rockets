@@ -38,7 +38,8 @@ local colors = {
     ['orange'] =  { r = 1.000, g = 0.630, b = 0.259 },
     ['purple'] = { r = 0.821, g = 0.440, b = 0.998 },
     ['pink'] = { r = 1.000, g = 0.520, b = 0.633 },
-    ['red'] = { r = 1.000, g = 0.166, b = 0.141 }
+    ['red'] = { r = 1.000, g = 0.166, b = 0.141 },
+    ['white'] = { r = 1, g = 1, b = 1 }
 }
 function SharedFunctions.get_color(name)
     if colors[name] then
