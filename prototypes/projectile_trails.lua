@@ -21,7 +21,18 @@ require '__firework_rockets__/constant'
 --- firework-trail-firework-6-red-1
 --- firework-trail-firework-6-white-1
 --- firework-trail-firework-6-yellow-1
----
+--- firework-trail-firework-7-white-1
+--- firework-trail-firework-7-red-1
+--- firework-trail-firework-7-yellow-1
+--- firework-trail-firework-8-purple-1
+--- firework-trail-firework-8-orange-1
+--- firework-trail-firework-8-yellow-1
+--- firework-trail-firework-9-v1-1
+--- firework-trail-firework-9-v2-1
+--- firework-trail-firework-9-v3-1
+--- firework-trail-firework-10-blue-1
+--- firework-trail-firework-10-yellow-1
+--- firework-trail-firework-10-pink-1
 
 local build_firework_projectiles = function(data)
     local projectile =
@@ -79,123 +90,24 @@ local build_firework_projectiles = function(data)
     return projectile
 end
 
-local old_trails = {
-    ----- Version 1 ----
-    {
-        version = 1,
-        type = "orange",
-        width = 30,
-        height = 128,
-        frame_count = 20,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COLORFUL_ROCKET_EFFECT_ID
-    },
-    {
-        version = 1,
-        type = "pink",
-        width = 38,
-        height = 141,
-        frame_count = 20,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COLORFUL_ROCKET_EFFECT_ID
-    },
-    {
-        version = 1,
-        type = "red",
-        width = 30,
-        height = 131,
-        frame_count = 20,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COLORFUL_ROCKET_EFFECT_ID
-    },
-    ----- Version 2 ----
-    {
-        version = 2,
-        type = "orange",
-        width = 36,
-        height = 185,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = WARM_ROCKET_EFFECT_ID
-    },
-    {
-        version = 2,
-        type = "pink",
-        width = 36,
-        height = 185,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = WARM_ROCKET_EFFECT_ID
-    },
-    {
-        version = 2,
-        type = "purple",
-        width = 36,
-        height = 185,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COOL_ROCKET_EFFECT_ID
-    },
-    ----- Version 3 ----
-    {
-        version = 3,
-        type = "orange",
-        width = 40,
-        height = 159,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = WARM_ROCKET_EFFECT_ID
-    },
-    {
-        version = 3,
-        type = "pink",
-        width = 40,
-        height = 159,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = WARM_ROCKET_EFFECT_ID
-    },
-    {
-        version = 3,
-        type = "purple",
-        width = 40,
-        height = 159,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COOL_ROCKET_EFFECT_ID
-    },
-    {
-        version = 3,
-        type = "green",
-        width = 40,
-        height = 159,
-        frame_count = 22,
-        animation_speed = 0.5,
-        draw_as_glow = true,
-        scale = 1,
-        script_id = COOL_ROCKET_EFFECT_ID
-    },
-}
+----- Version 1 ----
+--    width = 30,
+--    height = 128,
+--    frame_count = 20
+-- orange, pink, red
+----- Version 2 ----
+--    width = 36,
+--    height = 185,
+--    frame_count = 22,
+-- orange, pink, purple
+----- Version 3 ----
+--    width = 40,
+--    height = 159,
+--    frame_count = 22,
+-- orange, pink, purple, green
+---
 
----- Firework V1
+---- Firework 1
 local trails_set1 = {
     {
         version = 3,
@@ -234,7 +146,7 @@ local trails_set1 = {
 for _, projectile in pairs(trails_set1) do
     data:extend({ build_firework_projectiles(projectile) })
 end
----- Firework V2
+---- Firework 2
 local trails_set2 = {
     {
         version = 2,
@@ -273,7 +185,7 @@ local trails_set2 = {
 for _, projectile in pairs(trails_set2) do
     data:extend({ build_firework_projectiles(projectile) })
 end
----- Firework V3
+---- Firework 3
 local trails_set3 = {
     {
         version = 3,
@@ -312,7 +224,7 @@ local trails_set3 = {
 for _, projectile in pairs(trails_set3) do
     data:extend({ build_firework_projectiles(projectile) })
 end
----- Firework V4
+---- Firework 4
 local trails_set4 = {
     {
         version = 1,
@@ -352,7 +264,7 @@ for _, projectile in pairs(trails_set4) do
     data:extend({ build_firework_projectiles(projectile) })
 end
 
------ version V5
+----- version 5
 local trails_set5 = {
     {
         version = 2,
@@ -392,7 +304,7 @@ for _, projectile in pairs(trails_set5) do
     data:extend({ build_firework_projectiles(projectile) })
 end
 
------ version V6
+----- version 6
 local trails_set6 = {
     {
         version = 3,
@@ -432,4 +344,164 @@ for _, projectile in pairs(trails_set6) do
     data:extend({ build_firework_projectiles(projectile) })
 end
 
+----- version 7
+local trails_set7 = {
+    {
+        version = 3,
+        type = "purple",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-7-white-1'
+    },
+    {
+        version = 3,
+        type = "orange",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-7-yellow-1'
+    },
+    {
+        version = 3,
+        type = "pink",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-7-red-1'
+    }
+}
 
+for _, projectile in pairs(trails_set7) do
+    data:extend({ build_firework_projectiles(projectile) })
+end
+
+
+----- version 8
+local trails_set8 = {
+    {
+        version = 3,
+        type = "purple",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-8-purple-1'
+    },
+    {
+        version = 3,
+        type = "orange",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-8-orange-1'
+    },
+    {
+        version = 2,
+        type = "orange",
+        width = 36,
+        height = 185,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-8-yellow-1'
+    }
+}
+
+for _, projectile in pairs(trails_set8) do
+    data:extend({ build_firework_projectiles(projectile) })
+end
+
+---- Firework 9
+local trails_set9 = {
+    {
+        version = 1,
+        type = "orange",
+        width = 30,
+        height = 128,
+        frame_count = 20,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-9-v1-1'
+    },
+    {
+        version = 1,
+        type = "pink",
+        width = 38,
+        height = 141,
+        frame_count = 20,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-9-v2-1'
+    },
+    {
+        version = 1,
+        type = "red",
+        width = 30,
+        height = 131,
+        frame_count = 20,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-9-v3-1'
+    }
+}
+for _, projectile in pairs(trails_set9) do
+    data:extend({ build_firework_projectiles(projectile) })
+end
+
+local trails_set10 = {
+    {
+        version = 3,
+        type = "purple",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-10-blue-1'
+    },
+    {
+        version = 3,
+        type = "orange",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-10-yellow-1'
+    },
+    {
+        version = 3,
+        type = "pink",
+        width = 40,
+        height = 159,
+        frame_count = 22,
+        animation_speed = 0.5,
+        draw_as_glow = true,
+        scale = 1,
+        firework_explosion = 'firework-10-pink-1'
+    },
+}
+for _, projectile in pairs(trails_set10) do
+    data:extend({ build_firework_projectiles(projectile) })
+end

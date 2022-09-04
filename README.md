@@ -1,19 +1,23 @@
 #Firework Rockets
-This mod introduces firework rockets.  
+This mod introduces firework rockets.  There are 30 variants of firework.   
 
 You can shoot them with regular rocket launcher, in spidertron or build a mortar crate to auto deploy firework.
 
 There are 4 types of firework rocket.
 - Warm / shoot warm color firework
 - Cool / shoot cool color firework
-- Colorful / shoots multi-colors firework
-- Random / shoots all of above
+- Colorful / shoots multi-colors firework, Type 4 & 9
+- Random / shoots all of above (using warm, cool, colorful variants)
 
 A mortar crate which you can load firework rockets to auto fire.
 
 #### TO DO
-- This current version includes 9 / 30 firework variants.  There are 21 variants left to do.
 - Improve sound effects
+- Add more types of rockets to fine tune your firework for auto deployment.
+  - Small firework, Type 1, 2, 3
+  - Round firework, Type 5, 6, 7, 10
+  - Flare - Type 8
+- Other tweaks and user requests.
 
 
 #### Credits

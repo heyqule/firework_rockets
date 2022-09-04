@@ -23,15 +23,15 @@ end)
 local firework_explosions = function(surface)
 
     local projectile_types = {
-        'firework-trail-firework-4-v1-1',
-        'firework-trail-firework-4-v2-1',
-        'firework-trail-firework-4-v3-1',
-        'firework-trail-firework-5-pink-1-5',
-        'firework-trail-firework-5-purple-1-5',
-        'firework-trail-firework-5-yellow-1-5',
-        'firework-trail-firework-6-red-1',
-        'firework-trail-firework-6-white-1',
-        'firework-trail-firework-6-yellow-1'
+        'firework-trail-firework-8-purple-1',
+        'firework-trail-firework-8-orange-1',
+        'firework-trail-firework-8-yellow-1',
+        'firework-trail-firework-9-v1-1',
+        'firework-trail-firework-9-v2-1',
+        'firework-trail-firework-9-v3-1',
+        'firework-trail-firework-10-blue-1',
+        'firework-trail-firework-10-yellow-1',
+        'firework-trail-firework-10-pink-1',
     }
 
     for key, value in pairs(projectile_types) do

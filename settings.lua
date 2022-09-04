@@ -12,7 +12,7 @@ data:extend {
         description = "firework-rocket-mortar-process-interval",
         setting_type = "startup",
         default_value = 51,
-        allowed_values = {19, 31, 41, 47, 51, 61, 97, 113},
+        allowed_values = {19, 31, 41, 51, 61, 97, 113},
         order = "firework-100"
     },
     --- Global Tab
@@ -21,8 +21,8 @@ data:extend {
         name = "firework-rocket-travel-range",
         description = "firework-rocket-travel-range",
         setting_type = "runtime-global",
-        default_value = '16-32',
-        allowed_values = {'8-16','10-24','16-32','32-48','48-60','60-72','72-84','84-96'},
+        default_value = '16-48',
+        allowed_values = {'8-40','10-42','16-48','32-64','48-80','60-90','72-104'},
         order = "firework-100"
     },
 }

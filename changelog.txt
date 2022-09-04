@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2022-08-31
+
+  Features:
+    - Added the rest of firework variants. Total 30 variants.
+
+  Changes:
+    - Chance of firework types when shooting random rocket, 10% colorful, 60% warm, 40% cool
+    - Increased the gaps for travel range from 16 tiles to 32 tiles.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2022-08-31
 

@@ -43,7 +43,6 @@ local process_crates = function(event)
         local entity = turret.entity
         if not (entity and entity.valid) then
             deployed_crates[key] = nil
-            deployed_crates_size = deployed_crates_size - 1
             goto process_crates_for_continue
         end
 

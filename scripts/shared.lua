@@ -28,6 +28,12 @@ local warm_firework = {
     'firework-trail-firework-5-yellow-1-5',
     'firework-trail-firework-6-red-1',
     'firework-trail-firework-6-yellow-1',
+    'firework-trail-firework-7-red-1',
+    'firework-trail-firework-7-yellow-1',
+    'firework-trail-firework-8-orange-1',
+    'firework-trail-firework-8-yellow-1',
+    'firework-trail-firework-10-pink-1',
+    'firework-trail-firework-10-yellow-1',
 }
 
 local warm_firework_size = #warm_firework
@@ -39,7 +45,10 @@ local cool_firework = {
     'firework-trail-firework-2-blue-1',
     'firework-trail-firework-2-purple-1',
     'firework-trail-firework-3-green-1',
-    'firework-trail-firework-6-white-1'
+    'firework-trail-firework-6-white-1',
+    'firework-trail-firework-7-white-1',
+    'firework-trail-firework-8-purple-1',
+    'firework-trail-firework-10-blue-1',
 }
 local cool_firework_size = #cool_firework
 
@@ -47,10 +56,15 @@ local colorful_firework = {
     'firework-trail-firework-4-v1-1',
     'firework-trail-firework-4-v2-1',
     'firework-trail-firework-4-v3-1',
+    'firework-trail-firework-9-v1-1',
+    'firework-trail-firework-9-v2-1',
+    'firework-trail-firework-9-v3-1',
 }
 local colorful_firework_size = #colorful_firework
 
-
+local can_spawn = function(chance_value)
+    return  math.random(1, 100) > (100 - chance_value)
+end
 
 local pick_firework = {
     [WARM_ROCKET_EFFECT_ID] = function(args)
@@ -63,10 +77,9 @@ local pick_firework = {
         return colorful_firework[math.random(1, colorful_firework_size)]
     end,
     [RANDOM_ROCKET_EFFECT_ID] = function(args)
-        local type = math.random(1, 3)
-        if type == 1 then
+        if can_spawn(10) then
             return colorful_firework[math.random(1, colorful_firework_size)]
-        elseif type == 2 then
+        elseif can_spawn(60) then
             return warm_firework[math.random(1, warm_firework_size)]
         else
             return cool_firework[math.random(1, colorful_firework_size)]
@@ -87,7 +100,7 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
         if source_position then
             target_position = target_position or
                     {
-                        x = source_position.x + math.random(-8,8),
+                        x = source_position.x + math.random(-12,12),
                         y = source_position.y - math.random(16,32)
                     }
             surface.create_entity({
