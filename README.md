@@ -16,6 +16,12 @@ There are 4 types of firework rocket.
 
 A mortar crate which you can load firework rockets to auto fire.
 
+#### Optional Settings:
+
+Regular / Explosive rocket can shoot yellow firework. (Startup Setting, Default: Off)
+
+Firework Fire hazard. (Startup Setting, Default: Off)
+
 #### TO DO
 - Other tweaks and user requests.
 
