@@ -16,7 +16,7 @@ Date: 2022-09-05
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
-Date: 2022-08-31
+Date: 2022-09-04
 
   Features:
     - Added the rest of firework variants. Total 30 variants.
