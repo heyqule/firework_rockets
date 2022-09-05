@@ -6,19 +6,17 @@ You can shoot them with regular rocket launcher, in spidertron or build a mortar
 Youtube: https://www.youtube.com/watch?v=UCgh898YUvA
 
 There are 4 types of firework rocket.
-- Warm / shoot warm color firework
-- Cool / shoot cool color firework
+- Warm / shoot warm colors firework
+- Cool / shoot cool colors firework
 - Colorful / shoots multi-colors firework, Type 4 & 9
 - Random / shoots all of above (using warm, cool, colorful variants)
+- Small / shoot type 1, 2, 3
+- Large / shoot type 5, 6, 7, 10
+- Flare / Shoot type 8
 
 A mortar crate which you can load firework rockets to auto fire.
 
 #### TO DO
-- Improve sound effects
-- Add more types of rockets to fine tune your firework for auto deployment.
-  - Small firework, Type 1, 2, 3
-  - Round firework, Type 5, 6, 7, 10
-  - Flare - Type 8
 - Other tweaks and user requests.
 
 
@@ -29,5 +27,6 @@ https://graphicriver.net/item/fireworks-effect-sprites/21893898
 Royalty free sound effects from:
 https://www.zapsplat.com/sound-effect-category/fireworks/
 
-
+Sampled from ChannelAGG's Japan Firework Videos:
+https://www.youtube.com/c/ChannelAGG
 

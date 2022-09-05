@@ -6,6 +6,63 @@
 
 local SharedFunctions = require 'prototypes.shared'
 
+local sound_type = {
+    ['large'] = {
+        {
+            filename = '__firework_rockets__/sound/large_explosion1.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/large_explosion2.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/large_explosion3.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/large_explosion4.ogg',
+            volume = 0.7
+        }
+    },
+    ['regular'] = {
+        {
+            filename = '__firework_rockets__/sound/explosion1.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/explosion2.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/explosion3.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/explosion4.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/explosion5.ogg',
+            volume = 0.7
+        },
+    },
+    ['flare'] = {
+        {
+            filename = '__firework_rockets__/sound/explosion_fizz_1.ogg',
+            volume = 0.7
+        },
+        {
+            filename = '__firework_rockets__/sound/explosion_fizz_2.ogg',
+            volume = 0.7
+        }
+    }
+}
+
+local get_sound_pack = function(type)
+    return sound_type[type]
+end
+
 local build_firework = function(data)
     data['scale'] = data['scale'] or 1
     local filename = "__firework_rockets__/graphics/firework_"..data['version'].."/"..data['type']..".png"
@@ -30,16 +87,7 @@ local build_firework = function(data)
             }
         },
         sound = {
-            variations = {
-                {
-                    filename = '__firework_rockets__/sound/explosion2.ogg',
-                    volume = 0.7
-                },
-                {
-                    filename = '__firework_rockets__/sound/explosion3.ogg',
-                    volume = 0.7
-                }
-            },
+            variations = get_sound_pack(data['sound_type']),
             audible_distance_modifier = 1.5,
         },
     }
@@ -62,7 +110,8 @@ local firework_1_data = {
     lighting_intensity = 1,
     lighting_color = SharedFunctions.get_color('green'),
     lighting_size = 10,
-    lighting_shift = {-0.5, -2}
+    lighting_shift = {-0.5, -2},
+    sound_type = 'regular',
  },
  {
      version = 1,
@@ -77,7 +126,8 @@ local firework_1_data = {
      lighting_intensity = 1,
      lighting_color = SharedFunctions.get_color('orange'),
      lighting_size = 10,
-     lighting_shift = {-0.5, -2}
+     lighting_shift = {-0.5, -2},
+     sound_type = 'regular',
  },
  {
      version = 1,
@@ -92,7 +142,8 @@ local firework_1_data = {
      lighting_intensity = 1,
      lighting_color = SharedFunctions.get_color('purple'),
      lighting_size = 10,
-     lighting_shift = {-0.5, -2}
+     lighting_shift = {-0.5, -2},
+     sound_type = 'regular',
  },
 }
 
@@ -114,7 +165,8 @@ local firework_2_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('orange'),
         lighting_size = 10,
-        lighting_shift = {-0.5, -1}
+        lighting_shift = {-0.5, -1},
+        sound_type = 'regular',
     },
     {
         version = 2,
@@ -129,7 +181,8 @@ local firework_2_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('purple'),
         lighting_size = 10,
-        lighting_shift = {-0.5, -1}
+        lighting_shift = {-0.5, -1},
+        sound_type = 'regular',
     },
     {
         version = 2,
@@ -144,7 +197,8 @@ local firework_2_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('blue'),
         lighting_size = 10,
-        lighting_shift = {-0.5, -2}
+        lighting_shift = {-0.5, -2},
+        sound_type = 'regular',
     },
 }
 
@@ -166,7 +220,8 @@ local firework_3_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('green'),
         lighting_size = 10,
-        lighting_shift = {-0.5, -1}
+        lighting_shift = {-0.5, -1},
+        sound_type = 'regular',
     },
     {
         version = 3,
@@ -182,6 +237,7 @@ local firework_3_data = {
         lighting_color = SharedFunctions.get_color('pink'),
         lighting_size = 10,
         lighting_shift = {0, -1},
+        sound_type = 'regular',
     },
     {
         version = 3,
@@ -196,7 +252,8 @@ local firework_3_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('red'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'regular',
     }
 }
 
@@ -218,7 +275,8 @@ local firework_4_data = {
         lighting_intensity = 0.75,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size =10,
-        lighting_shift = {-0.5, -1}
+        lighting_shift = {-0.5, -1},
+        sound_type = 'regular',
     },
     {
         version = 4,
@@ -234,6 +292,7 @@ local firework_4_data = {
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 10,
         lighting_shift = {0, -1},
+        sound_type = 'regular',
     },
     {
         version = 4,
@@ -248,7 +307,8 @@ local firework_4_data = {
         lighting_intensity = 0.75,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'regular',
     }
 }
 
@@ -270,7 +330,8 @@ local firework_5_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('yellow'),
         lighting_size = 15,
-        lighting_shift = {-0.5, -1}
+        lighting_shift = {-0.5, -1},
+        sound_type = 'large',
     },
     {
         version = 5,
@@ -286,6 +347,7 @@ local firework_5_data = {
         lighting_color = SharedFunctions.get_color('purple'),
         lighting_size = 15,
         lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 5,
@@ -299,8 +361,9 @@ local firework_5_data = {
         scale = 1.5,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('pink'),
-        lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     }
 }
 
@@ -322,7 +385,8 @@ local firework_6_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('yellow'),
         lighting_size = 15,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 6,
@@ -338,6 +402,7 @@ local firework_6_data = {
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 15,
         lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 6,
@@ -351,8 +416,9 @@ local firework_6_data = {
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('red'),
-        lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     }
 }
 
@@ -374,7 +440,8 @@ local firework_7_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('red'),
         lighting_size = 15,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 7,
@@ -389,7 +456,8 @@ local firework_7_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 15,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 7,
@@ -404,7 +472,8 @@ local firework_7_data = {
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('yellow'),
         lighting_size = 15,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
 }
 
@@ -420,13 +489,14 @@ local firework_8_data = {
         height = 539,
         line_length = 9,
         frame_count = 42,
-        animation_speed = 0.5,
+        animation_speed = 0.45,
         draw_as_glow = true,
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('yellow'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'flare',
     },
     {
         version = 8,
@@ -435,13 +505,14 @@ local firework_8_data = {
         height = 501,
         line_length = 9,
         frame_count = 42,
-        animation_speed = 0.5,
+        animation_speed = 0.45,
         draw_as_glow = true,
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('orange'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'flare',
     },
     {
         version = 8,
@@ -450,13 +521,14 @@ local firework_8_data = {
         height = 502,
         line_length = 8,
         frame_count = 42,
-        animation_speed = 0.5,
+        animation_speed = 0.45,
         draw_as_glow = true,
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('purple'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'flare',
     },
 }
 
@@ -478,7 +550,8 @@ local firework_9_data = {
         lighting_intensity = 0.75,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'regular',
     },
     {
         version = 9,
@@ -493,7 +566,8 @@ local firework_9_data = {
         lighting_intensity = 0.75,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'regular',
     },
     {
         version = 9,
@@ -508,7 +582,8 @@ local firework_9_data = {
         lighting_intensity = 0.75,
         lighting_color = SharedFunctions.get_color('white'),
         lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_shift = {0, -1},
+        sound_type = 'regular',
     },
 }
 
@@ -529,8 +604,9 @@ local firework_10_data = {
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('yellow'),
-        lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 10,
@@ -544,8 +620,9 @@ local firework_10_data = {
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('pink'),
-        lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
     {
         version = 10,
@@ -559,8 +636,9 @@ local firework_10_data = {
         scale = 1,
         lighting_intensity = 1,
         lighting_color = SharedFunctions.get_color('blue'),
-        lighting_size = 10,
-        lighting_shift = {0, -1}
+        lighting_size = 15,
+        lighting_shift = {0, -1},
+        sound_type = 'large',
     },
 }
 

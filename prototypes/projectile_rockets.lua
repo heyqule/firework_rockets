@@ -159,4 +159,112 @@ data:extend({
             priority = "high"
         }
     },
+    {
+        type = "projectile",
+        name = "firework/small-rocket",
+        flags = {"not-on-map"},
+        acceleration = 0.005,
+        turn_speed = 0,
+        turning_speed_increases_exponentially_with_projectile_speed = false,
+        direction_only = true,
+        final_action =
+        {
+            type = "direct",
+            action_delivery =
+            {
+                type = "instant",
+                target_effects =
+                {
+                    {
+                        type = "script",
+                        effect_id = SMALL_ROCKET_EFFECT_ID,
+
+                    }
+                }
+            }
+        },
+        animation =
+        {
+            filename = "__base__/graphics/entity/rocket/rocket.png",
+            draw_as_glow = true,
+            frame_count = 8,
+            line_length = 8,
+            width = 9,
+            height = 35,
+            shift = {0, 0},
+            priority = "high"
+        }
+    },
+    {
+        type = "projectile",
+        name = "firework/large-rocket",
+        flags = {"not-on-map"},
+        acceleration = 0.005,
+        turn_speed = 0,
+        turning_speed_increases_exponentially_with_projectile_speed = false,
+        direction_only = true,
+        final_action =
+        {
+            type = "direct",
+            action_delivery =
+            {
+                type = "instant",
+                target_effects =
+                {
+                    {
+                        type = "script",
+                        effect_id = LARGE_ROCKET_EFFECT_ID,
+
+                    }
+                }
+            }
+        },
+        animation =
+        {
+            filename = "__base__/graphics/entity/rocket/rocket.png",
+            draw_as_glow = true,
+            frame_count = 8,
+            line_length = 8,
+            width = 9,
+            height = 35,
+            shift = {0, 0},
+            priority = "high"
+        }
+    },
+    {
+        type = "projectile",
+        name = "firework/flare-rocket",
+        flags = {"not-on-map"},
+        acceleration = 0.005,
+        turn_speed = 0,
+        turning_speed_increases_exponentially_with_projectile_speed = false,
+        direction_only = true,
+        final_action =
+        {
+            type = "direct",
+            action_delivery =
+            {
+                type = "instant",
+                target_effects =
+                {
+                    {
+                        type = "script",
+                        effect_id = FLARE_ROCKET_EFFECT_ID,
+
+                    }
+                }
+            }
+        },
+        animation =
+        {
+            filename = "__base__/graphics/entity/rocket/rocket.png",
+            draw_as_glow = true,
+            frame_count = 8,
+            line_length = 8,
+            width = 9,
+            height = 35,
+            shift = {0, 0},
+            priority = "high"
+        }
+    },
 })
