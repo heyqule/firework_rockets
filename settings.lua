@@ -15,6 +15,40 @@ data:extend {
         allowed_values = {19, 31, 41, 51, 61, 97, 113},
         order = "firework-100"
     },
+    {
+        type = "bool-setting",
+        name = "firework-rocket-add-firework-regular-rocket",
+        description = "firework-rocket-add-firework-regular-rocket",
+        setting_type = "startup",
+        default_value = false,
+        order = "firework-101"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-add-firework-regular-rocket-chance",
+        description = "firework-rocket-add-firework-regular-rocket-chance",
+        setting_type = "startup",
+        default_value = 10,
+        allowed_values = {10, 20, 33, 50, 66, 75, 100},
+        order = "firework-102"
+    },
+    {
+        type = "bool-setting",
+        name = "firework-rocket-fire-hazard",
+        description = "firework-rocket-fire-hazard",
+        setting_type = "startup",
+        default_value = false,
+        order = "firework-110"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-fire-hazard-chance",
+        description = "firework-rocket-fire-hazard-chance",
+        setting_type = "startup",
+        default_value = 1,
+        allowed_values = {1, 2, 3, 5, 10, 20, 33, 50},
+        order = "firework-111"
+    },
     --- Global Tab
     {
         type = "string-setting",

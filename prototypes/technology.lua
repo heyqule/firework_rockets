@@ -30,6 +30,18 @@ data:extend({
             },
             {
                 type = "unlock-recipe",
+                recipe = "firework/large-rocket"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "firework/small-rocket"
+            },
+            {
+                type = "unlock-recipe",
+                recipe = "firework/flare-rocket"
+            },
+            {
+                type = "unlock-recipe",
                 recipe = "firework/mortar-crate"
             }
         },

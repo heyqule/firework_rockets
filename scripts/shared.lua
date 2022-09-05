@@ -39,12 +39,12 @@ local warm_firework = {
 local warm_firework_size = #warm_firework
 
 local cool_firework = {
-    'firework-trail-firework-5-purple-1-5',
     'firework-trail-firework-1-purple-1',
     'firework-trail-firework-1-green-1',
     'firework-trail-firework-2-blue-1',
     'firework-trail-firework-2-purple-1',
     'firework-trail-firework-3-green-1',
+    'firework-trail-firework-5-purple-1-5',
     'firework-trail-firework-6-white-1',
     'firework-trail-firework-7-white-1',
     'firework-trail-firework-8-purple-1',
@@ -62,9 +62,55 @@ local colorful_firework = {
 }
 local colorful_firework_size = #colorful_firework
 
+local regular_rocket_firework = {
+    'firework-trail-firework-1-orange-1',
+    'firework-trail-firework-2-orange-1',
+    'firework-trail-firework-8-yellow-1',
+}
+local regular_rocket_firework_size = #regular_rocket_firework
+
+local small_rocket_firework = {
+    'firework-trail-firework-1-green-1',
+    'firework-trail-firework-1-orange-1',
+    'firework-trail-firework-1-purple-1',
+    'firework-trail-firework-2-orange-1',
+    'firework-trail-firework-2-purple-1',
+    'firework-trail-firework-2-blue-1',
+    'firework-trail-firework-3-green-1',
+    'firework-trail-firework-3-pink-1',
+    'firework-trail-firework-3-red-1',
+}
+local small_rocket_firework_size = #small_rocket_firework
+
+local large_rocket_firework = {
+    'firework-trail-firework-5-pink-1-5',
+    'firework-trail-firework-5-yellow-1-5',
+    'firework-trail-firework-5-purple-1-5',
+    'firework-trail-firework-6-red-1',
+    'firework-trail-firework-6-yellow-1',
+    'firework-trail-firework-6-white-1',
+    'firework-trail-firework-7-red-1',
+    'firework-trail-firework-7-yellow-1',
+    'firework-trail-firework-7-white-1',
+    'firework-trail-firework-10-pink-1',
+    'firework-trail-firework-10-yellow-1',
+    'firework-trail-firework-10-blue-1',
+}
+local large_rocket_firework_size = #small_rocket_firework
+
+local flare_rocket_firework = {
+    'firework-trail-firework-8-orange-1',
+    'firework-trail-firework-8-yellow-1',
+    'firework-trail-firework-8-purple-1',
+}
+local flare_rocket_firework_size = #flare_rocket_firework
+
+
 local can_spawn = function(chance_value)
     return  math.random(1, 100) > (100 - chance_value)
 end
+
+local rocket_firework_spawn_chance = settings.startup['firework-rocket-add-firework-regular-rocket-chance'].value
 
 local pick_firework = {
     [WARM_ROCKET_EFFECT_ID] = function(args)
@@ -85,6 +131,22 @@ local pick_firework = {
             return cool_firework[math.random(1, colorful_firework_size)]
         end
     end,
+    [REGULAR_ROCKET_EFFECT_ID] = function(args)
+        if can_spawn(rocket_firework_spawn_chance) then
+            return regular_rocket_firework[math.random(1, regular_rocket_firework_size)]
+        end
+
+        return nil
+    end,
+    [SMALL_ROCKET_EFFECT_ID] = function(args)
+        return small_rocket_firework[math.random(1, small_rocket_firework_size)]
+    end,
+    [LARGE_ROCKET_EFFECT_ID] = function(args)
+        return large_rocket_firework[math.random(1, large_rocket_firework_size)]
+    end,
+    [FLARE_ROCKET_EFFECT_ID] = function(args)
+        return flare_rocket_firework[math.random(1, flare_rocket_firework_size)]
+    end
 }
 
 local SharedFunctions = {}
@@ -97,7 +159,7 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
     local surface = game.surfaces[surface_index]
     if surface and surface.valid and source_position then
         local name  = pick_firework[effect_id]()
-        if source_position then
+        if name and source_position then
             target_position = target_position or
                     {
                         x = source_position.x + math.random(-12,12),
@@ -107,7 +169,7 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
                 name = name,
                 position = source_position,
                 target = target_position,
-                speed = 0.1,
+                speed = math.random(20, 40) / 100,
                 max_range = math.random(global.min_travel_distance, global.max_travel_distance)
             })
         end

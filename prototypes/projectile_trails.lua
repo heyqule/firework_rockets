@@ -40,7 +40,7 @@ local build_firework_projectiles = function(data)
             type = "projectile",
             name = "firework-trail-"..data['firework_explosion'],
             flags = {"not-on-map"},
-            acceleration = 0.005,
+            acceleration = 0.001,
             turn_speed = 0,
             turning_speed_increases_exponentially_with_projectile_speed = false,
             direction_only = true,
@@ -73,16 +73,19 @@ local build_firework_projectiles = function(data)
                     variations = {
                         {
                             filename = '__firework_rockets__/sound/scream1.ogg',
-                            volumea = 0.3
+                            volumea = 1
                         },
                         {
                             filename = '__firework_rockets__/sound/scream2.ogg',
-                            volume = 0.3
+                            volume = 1
+                        },
+                        {
+                            filename = '__firework_rockets__/sound/scream3.ogg',
+                            volume = 1
                         },
                     }
                 },
-                category = "game-effect",
-                audible_distance_modifier = 0.3
+                audible_distance_modifier = 0.5
             }
         }
 

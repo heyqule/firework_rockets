@@ -194,4 +194,136 @@ data:extend({
         subgroup = "firework-rockets",
         stack_size = 200
     },
+    {
+        type = "ammo",
+        name = "firework/small-rocket",
+        flags = {'hide-from-bonus-gui'},
+        icons = {
+            {
+                icon = "__base__/graphics/icons/rocket.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__base__/graphics/icons/signal/signal_S.png",
+                icon_size = 64,
+                scale = 0.2,
+                shift = {-9,-9}
+            },
+        },
+        ammo_type =
+        {
+            category = "rocket",
+            action =
+            {
+                type = "direct",
+                ignore_collision_condition = true,
+                action_delivery =
+                {
+                    type = "projectile",
+                    projectile = "firework/small-rocket",
+                    starting_speed = 0.1,
+                    max_range = 20,
+                    min_range = 10,
+                    range_deviation = 2,
+                    source_effects =
+                    {
+                        type = "create-entity",
+                        entity_name = "explosion-hit"
+                    }
+                }
+            },
+            clamp_position = true,
+            target_type = "position"
+        },
+        subgroup = "firework-rockets",
+        stack_size = 200
+    },
+    {
+        type = "ammo",
+        name = "firework/large-rocket",
+        flags = {'hide-from-bonus-gui'},
+        icons = {
+            {
+                icon = "__base__/graphics/icons/rocket.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__base__/graphics/icons/signal/signal_L.png",
+                icon_size = 64,
+                scale = 0.2,
+                shift = {-9,-9}
+            },
+        },
+        ammo_type =
+        {
+            category = "rocket",
+            action =
+            {
+                type = "direct",
+                ignore_collision_condition = true,
+                action_delivery =
+                {
+                    type = "projectile",
+                    projectile = "firework/large-rocket",
+                    starting_speed = 0.1,
+                    max_range = 20,
+                    min_range = 10,
+                    range_deviation = 2,
+                    source_effects =
+                    {
+                        type = "create-entity",
+                        entity_name = "explosion-hit"
+                    }
+                }
+            },
+            clamp_position = true,
+            target_type = "position"
+        },
+        subgroup = "firework-rockets",
+        stack_size = 200
+    },
+    {
+        type = "ammo",
+        name = "firework/flare-rocket",
+        flags = {'hide-from-bonus-gui'},
+        icons = {
+            {
+                icon = "__base__/graphics/icons/rocket.png",
+                icon_size = 64,
+            },
+            {
+                icon = "__base__/graphics/icons/signal/signal_F.png",
+                icon_size = 64,
+                scale = 0.2,
+                shift = {-9,-9}
+            },
+        },
+        ammo_type =
+        {
+            category = "rocket",
+            action =
+            {
+                type = "direct",
+                ignore_collision_condition = true,
+                action_delivery =
+                {
+                    type = "projectile",
+                    projectile = "firework/flare-rocket",
+                    starting_speed = 0.1,
+                    max_range = 20,
+                    min_range = 10,
+                    range_deviation = 2,
+                    source_effects =
+                    {
+                        type = "create-entity",
+                        entity_name = "explosion-hit"
+                    }
+                }
+            },
+            clamp_position = true,
+            target_type = "position"
+        },
+        subgroup = "firework-rockets",
+        stack_size = 200
+    },
 })

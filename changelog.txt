@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2022-09-05
+
+  Features:
+    - Added new sound for large firework and flare firework(type 8)
+    - Regular Rocket & Explosive rockets can fire some yellow theme fireworks.  Off by default.
+    - Firework may create fire hazard. It may burn forest and your factory. Off by default.
+    - Added Small / Large / Flare type firework rockets.
+    - Added 3 Achievements.
+
+  Changes:
+    - Changed firework scream sound.
+    - Fixed light radius on some large firework
+
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2022-08-31
 
