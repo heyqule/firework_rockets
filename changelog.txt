@@ -1,5 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
+Date: ???
+
+  Changes:
+    - Added consumption statistic support when fire rocket by mortar.
+    - Improve performance on mortar crate processing script.
+
+  Bugfixes:
+    - Small / Large / Flare rockets were not in mortar crate auto deploy whitelist
+
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
 Date: 2022-09-05
 
   Features:

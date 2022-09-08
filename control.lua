@@ -8,3 +8,6 @@ handler = require("event_handler")
 handler.add_lib(require("scripts/rockets_handling"))
 
 handler.add_lib(require("scripts/mortar_crate"))
+
+local DebugRemoteApi = require('scripts/debug_api')
+remote.add_interface("firework_debug", DebugRemoteApi)
