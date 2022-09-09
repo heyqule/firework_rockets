@@ -9,7 +9,7 @@ data:extend({
         type = "technology",
         name = 'firework/techs',
         icon_size = 64,
-        icon = "__firework_rockets__/graphics/icons/firework_tech.png",
+        icon = "__firework_rockets_assets__/graphics/icons/firework_tech.png",
         effects =
         {
             {

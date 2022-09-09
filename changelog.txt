@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2022-09-09
+
+  Changes:
+    - Added consumption statistic support when mortar crates fire rockets.
+    - Improved performance in mortar crate processing script.
+    - ** Mortar crates may take some time to warm up when it loaded with rockets from an empty inventory. Due to above changes. **
+    - Added Active Mortar Process Batch setting to control how many mortar crates to process in the designated tick. (default 12)
+    - Added Inactive Mortar Process Batch setting to control how many mortar crates to process in the designated tick. (default 24 every 3s)
+    - Moved graphics and sound to firework_rockets_assets mod.  So that a code patch won't need 100MB of download.
+
+  Bugfixes:
+    - Fixed Small / Large / Flare rockets were not in mortar crates' auto deploy whitelist
+    - Fixed flare rocket locale
+
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2022-09-05
 

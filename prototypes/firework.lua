@@ -9,51 +9,51 @@ local SharedFunctions = require 'prototypes.shared'
 local sound_type = {
     ['large'] = {
         {
-            filename = '__firework_rockets__/sound/large_explosion1.ogg',
+            filename = '__firework_rockets_assets__/sound/large_explosion1.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/large_explosion2.ogg',
+            filename = '__firework_rockets_assets__/sound/large_explosion2.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/large_explosion3.ogg',
+            filename = '__firework_rockets_assets__/sound/large_explosion3.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/large_explosion4.ogg',
+            filename = '__firework_rockets_assets__/sound/large_explosion4.ogg',
             volume = 0.7
         }
     },
     ['regular'] = {
         {
-            filename = '__firework_rockets__/sound/explosion1.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion1.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/explosion2.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion2.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/explosion3.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion3.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/explosion4.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion4.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/explosion5.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion5.ogg',
             volume = 0.7
         },
     },
     ['flare'] = {
         {
-            filename = '__firework_rockets__/sound/explosion_fizz_1.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion_fizz_1.ogg',
             volume = 0.7
         },
         {
-            filename = '__firework_rockets__/sound/explosion_fizz_2.ogg',
+            filename = '__firework_rockets_assets__/sound/explosion_fizz_2.ogg',
             volume = 0.7
         }
     }
@@ -65,7 +65,7 @@ end
 
 local build_firework = function(data)
     data['scale'] = data['scale'] or 1
-    local filename = "__firework_rockets__/graphics/firework_"..data['version'].."/"..data['type']..".png"
+    local filename = "__firework_rockets_assets__/graphics/firework_"..data['version'].."/"..data['type']..".png"
     local explosion = {
         type = "explosion",
         name = "firework-"..data['version'].."-"..data['type'].."-"..SharedFunctions.convert_scale(data['scale']),

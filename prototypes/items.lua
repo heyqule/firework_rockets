@@ -10,7 +10,7 @@ data:extend({
         name = 'firework/mortar-crate',
         icons = {
             {
-                icon = "__firework_rockets__/graphics/icons/mortar_crate.png",
+                icon = "__firework_rockets_assets__/graphics/icons/mortar_crate.png",
                 icon_size = 64,
             },
         },

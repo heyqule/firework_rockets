@@ -8,12 +8,32 @@ data:extend {
     --- Startup Tab
     {
         type = "int-setting",
-        name = "firework-rocket-mortar-process-interval",
-        description = "firework-rocket-mortar-process-interval",
+        name = "firework-rocket-mortar-active-interval",
+        description = "firework-rocket-mortar-active-interval",
         setting_type = "startup",
         default_value = 51,
         allowed_values = {19, 31, 41, 51, 61, 97, 113},
         order = "firework-100"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-mortar-active-batch",
+        description = "firework-rocket-mortar-active-batch",
+        setting_type = "startup",
+        default_value = 12,
+        minimum_value = 6,
+        maximum_value = 240,
+        order = "firework-101"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-mortar-inactive-batch",
+        description = "firework-rocket-mortar-inactive-batch",
+        setting_type = "startup",
+        default_value = 24,
+        minimum_value = 12,
+        maximum_value = 480,
+        order = "firework-103"
     },
     {
         type = "bool-setting",
@@ -21,7 +41,7 @@ data:extend {
         description = "firework-rocket-add-firework-regular-rocket",
         setting_type = "startup",
         default_value = false,
-        order = "firework-101"
+        order = "firework-110"
     },
     {
         type = "int-setting",
@@ -30,7 +50,7 @@ data:extend {
         setting_type = "startup",
         default_value = 10,
         allowed_values = {10, 20, 33, 50, 66, 75, 100},
-        order = "firework-102"
+        order = "firework-111"
     },
     {
         type = "bool-setting",
@@ -38,7 +58,7 @@ data:extend {
         description = "firework-rocket-fire-hazard",
         setting_type = "startup",
         default_value = false,
-        order = "firework-110"
+        order = "firework-120"
     },
     {
         type = "int-setting",
@@ -47,7 +67,7 @@ data:extend {
         setting_type = "startup",
         default_value = 1,
         allowed_values = {1, 2, 3, 5, 10, 20, 33, 50},
-        order = "firework-111"
+        order = "firework-121"
     },
     --- Global Tab
     {

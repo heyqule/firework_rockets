@@ -11,7 +11,7 @@ data:extend({
     {
         type = "ammo-turret",
         name = "firework/mortar-crate",
-        icon = "__firework_rockets__/graphics/icons/mortar_crate.png",
+        icon = "__firework_rockets_assets__/graphics/icons/mortar_crate.png",
         icon_size = 64, icon_mipmaps = 4,
         flags = {"placeable-player", "player-creation"},
         minable = {mining_time = 0.5, result = "firework/mortar-crate"},
@@ -34,7 +34,7 @@ data:extend({
         {
             layers = {
                 {
-                    filename = "__firework_rockets__/graphics/mortar_crate.png",
+                    filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
                     width = 256,
                     height = 256,
@@ -43,7 +43,7 @@ data:extend({
                     scale = 0.275
                 },
                 {
-                    filename = "__firework_rockets__/graphics/mortar_crate_shadow.png",
+                    filename = "__firework_rockets_assets__/graphics/mortar_crate_shadow.png",
                     width = 256,
                     height = 256,
                     direction_count = 1,
@@ -58,7 +58,7 @@ data:extend({
         {
             layers = {
                 {
-                    filename = "__firework_rockets__/graphics/mortar_crate.png",
+                    filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
                     width = 256,
                     height = 256,
