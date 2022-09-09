@@ -61,7 +61,7 @@ local build_firework_projectiles = function(data)
             },
             animation =
             {
-                filename = "__firework_rockets__/graphics/trails/trail" .. data['version'] .. "_" .. data['type'] .. ".png",
+                filename = "__firework_rockets_assets__/graphics/trails/trail" .. data['version'] .. "_" .. data['type'] .. ".png",
                 frame_count = data['frame_count'],
                 width = data['width'],
                 height = data['height'],
@@ -72,15 +72,15 @@ local build_firework_projectiles = function(data)
                 sound = {
                     variations = {
                         {
-                            filename = '__firework_rockets__/sound/scream1.ogg',
+                            filename = '__firework_rockets_assets__/sound/scream1.ogg',
                             volumea = 1
                         },
                         {
-                            filename = '__firework_rockets__/sound/scream2.ogg',
+                            filename = '__firework_rockets_assets__/sound/scream2.ogg',
                             volume = 1
                         },
                         {
-                            filename = '__firework_rockets__/sound/scream3.ogg',
+                            filename = '__firework_rockets_assets__/sound/scream3.ogg',
                             volume = 1
                         },
                     }

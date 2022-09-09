@@ -10,7 +10,7 @@ data:extend({
         name = "firework_rockets/party_automation",
         to_build = 'firework/mortar-crate',
         amount = 50,
-        icon = "__firework_rockets__/graphics/achievement/icon.png",
+        icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
         limited_to_one_game = true,
         order = 'z[firework]-01-party-automation'
@@ -20,7 +20,7 @@ data:extend({
         name = "firework_rockets/party_starter",
         item_product = 'firework/random-rocket',
         amount = 1000,
-        icon = "__firework_rockets__/graphics/achievement/icon.png",
+        icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
         limited_to_one_game = true,
         order = 'z[firework]-02-party-starter'
@@ -30,7 +30,7 @@ data:extend({
         name = "firework_rockets/eternal_party",
         item_product = 'firework/random-rocket',
         amount = 1000000,
-        icon = "__firework_rockets__/graphics/achievement/icon.png",
+        icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
         limited_to_one_game = true,
         order = 'z[firework]-03-eternal-party'

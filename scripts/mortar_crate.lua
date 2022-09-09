@@ -15,7 +15,7 @@ local deployed_active_crates = {
     crates = {},
 }
 
--- Track crates without rocket in inventory, checks every 30s, if it has rockets in inventory, move it back to active list. 200 entities / check
+-- Track crates without rocket in inventory, checks every 3s, if it has rockets in inventory, move it back to active list.
 -- { "surface.index-x-y" = {"prev", "next",  "entity"}}
 local deployed_inactive_crates = {
     head = nil,
@@ -23,8 +23,8 @@ local deployed_inactive_crates = {
     crates = {},
 }
 
-local MAX_ACTIVE_PER_BATCH = 24
-local MAX_INACTIVE_PER_BATCH = 24
+local MAX_ACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-active-batch'].value
+local MAX_INACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-inactive-batch'].value
 local inactive_processing_id;
 local active_processing_id;
 
@@ -164,7 +164,7 @@ local process_active_crates = function(event)
                 )
                 inventory.remove({name=invkey,count=1})
                 add_statistic(entity, invkey, 1)
-                turret.next_tick = event.tick + math.random(3,9) * 61
+                turret.next_tick = event.tick + math.random(3,10) * 61
                 fired = true
             end
         end
@@ -216,7 +216,7 @@ local process_inactive_crates = function(event)
             then
                 add_crate(deployed_active_crates, inactive_processing_id, {
                     entity = turret.entity,
-                    next_tick = event.tick + math.random(3,9) * 61
+                    next_tick = event.tick + math.random(3,6) * 61
                 })
                 remove_crate(deployed_inactive_crates, inactive_processing_id)
             end
@@ -258,7 +258,7 @@ mortar_crate.events =
 }
 
 mortar_crate.on_nth_tick = {
-    [settings.startup['firework-rocket-mortar-process-interval'].value] = process_active_crates,
+    [settings.startup['firework-rocket-mortar-active-interval'].value] = process_active_crates,
     [181] = process_inactive_crates
 }
 mortar_crate.on_init = function()

@@ -37,7 +37,7 @@ data:extend({
         type = "recipe",
         name = 'firework/colorful-rocket',
         enabled = false,
-        energy_required = 10,
+        energy_required = 5,
         ingredients =
         {
             {"firework/warm-rocket", 5},
@@ -97,7 +97,7 @@ data:extend({
         type = "recipe",
         name = 'firework/flare-rocket',
         enabled = false,
-        energy_required = 10,
+        energy_required = 5,
         ingredients =
         {
             {"firework/warm-rocket", 5},
