@@ -11,4 +11,8 @@ function DebugAPI.print_mortar_details()
     motar_crate.get_debug_data()
 end
 
+function DebugAPI.list_inactive_motars()
+    motar_crate.debug_list_inactive_motars()
+end
+
 return DebugAPI

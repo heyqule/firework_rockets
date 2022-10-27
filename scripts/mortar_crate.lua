@@ -12,6 +12,7 @@ local ScriptSharedFunctions = require 'shared'
 local deployed_active_crates = {
     head = nil,
     tail = nil,
+    size = 0,
     crates = {},
 }
 
@@ -20,6 +21,7 @@ local deployed_active_crates = {
 local deployed_inactive_crates = {
     head = nil,
     tail = nil,
+    size = 0,
     crates = {},
 }
 
@@ -48,6 +50,7 @@ local add_crate = function(crateList, crateKey, crate)
     end
 
     crateList.tail = crateKey
+    crateList.size = crateList.size + 1
 end
 
 local remove_crate = function(crateList, crateKey)
@@ -65,12 +68,20 @@ local remove_crate = function(crateList, crateKey)
         crateList.crates[crateKey] = nil
     elseif crateList.tail == crateKey then
         crateList.tail = crate.prev
-        crateList.crates[crate.prev].next = nil
         crateList.crates[crateKey] = nil
+        if crateList.crates[crate.prev] then
+            crateList.crates[crate.prev].next = nil
+        end
     else
         crateList.crates[crate.prev].next = crate.next
         crateList.crates[crate.next].prev = crate.prev
         crateList.crates[crateKey] = nil
+    end
+
+    crateList.size = crateList.size - 1
+    if crateList.size == 0 then
+        crateList.head = nil
+        crateList.tail = nil
     end
 end
 
@@ -238,6 +249,16 @@ local deployed_crate_migration = function()
             })
         end
     end
+
+    -- Reset Head
+    local first_create_key = next(deployed_inactive_crates.crates)
+    deployed_inactive_crates.head = first_create_key
+    deployed_inactive_crates.size = table_size(deployed_inactive_crates.crates)
+
+    local first_create_key = next(deployed_active_crates.crates)
+    deployed_active_crates.head = first_create_key
+    deployed_active_crates.size = table_size(deployed_active_crates.crates)
+
 end
 
 
@@ -280,10 +301,20 @@ mortar_crate.get_debug_data = function()
     print(tostring(inactive_processing_id) .. '/' .. tostring(active_processing_id))
     print('deployed_active_crates')
     print(tostring(deployed_active_crates.head) .. '/'.. tostring(deployed_active_crates.tail))
-    print(table_size(deployed_active_crates.crates))
+    print(deployed_active_crates.size)
     print('deployed_inactive_crates')
     print(tostring(deployed_inactive_crates.head) .. '/'.. tostring(deployed_inactive_crates.tail))
-    print(table_size(deployed_inactive_crates.crates))
+    print(deployed_inactive_crates.size)
+end
+
+mortar_crate.debug_list_inactive_motars = function()
+    print('Listing inactive crates')
+    print(deployed_inactive_crates.head)
+    for key, turret in pairs(deployed_inactive_crates.crates) do
+        print(key)
+        print(turret.entity.type)
+        print(turret.next)
+    end
 end
 
 return mortar_crate
