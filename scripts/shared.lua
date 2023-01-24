@@ -172,6 +172,10 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
                 speed = math.random(20, 40) / 100,
                 max_range = math.random(global.min_travel_distance, global.max_travel_distance)
             })
+
+            if global.emit_pollution then
+                surface.pollute(source_position, global.emit_pollution_value)
+            end
         end
     end
 end

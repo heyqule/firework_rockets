@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2023-01-29
+
+  Graphic:
+    - New mortar crate graphic.  Special Thanks: 1000MHz
+
+  Features:
+    - Firework now emits pollution. (default: on, 5 units per shot, configurable in game setting)
+
+  Changes:
+    - Firework light radius multiplier is now configurable in startup settings.
+    - Double default light radius for all fireworks.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 2022-10-27
 

@@ -36,20 +36,30 @@ data:extend({
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275
+                    scale = 0.5
+                },
+                {
+                    filename = "__firework_rockets_assets__/graphics/mortar_crate_mask.png",
+                    priority = "high",
+                    width = 152,
+                    height = 152,
+                    direction_count = 1,
+                    frame_count = 1,
+                    apply_runtime_tint = true,
+                    scale = 0.5
                 },
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate_shadow.png",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275,
-                    shift = {0.8, -0.1},
+                    scale = 0.5,
+                    shift = {1.25, 0},
                     draw_as_shadow = true
                 }
             },
@@ -60,11 +70,11 @@ data:extend({
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275
+                    scale = 0.5
                 }
             },
         },

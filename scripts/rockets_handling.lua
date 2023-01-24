@@ -22,6 +22,8 @@ local update_globals = function()
         string.match(settings.global['firework-rocket-travel-range'].value, "(%d+)%-(%d+)")
     global.min_travel_distance = tonumber(global.min_travel_distance)
     global.max_travel_distance = tonumber(global.max_travel_distance)
+    global.emit_pollution = game.map_settings.pollution.enabled and settings.global['firework-rocket-emit-pollution'].value
+    global.emit_pollution_value = settings.global['firework-rocket-emit-pollution-value'].value
 end
 
 local firework_handling = {}

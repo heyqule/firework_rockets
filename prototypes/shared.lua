@@ -14,11 +14,12 @@ function SharedFunctions.process_glow(entity, data, layer)
 end
 
 function SharedFunctions.process_lighting(entity, data)
-    if data['lighting_color'] and data['lighting_intensity'] and data['lighting_size'] then
+    local light_multiplier = settings.startup['firework-rocket-lighting-multiplier'].value
+    if data['lighting_color'] and data['lighting_intensity'] and data['lighting_size'] and light_multiplier > 0 then
         entity['light'] = {
             intensity = data['lighting_intensity'],
             color = data['lighting_color'],
-            size = data['lighting_size']
+            size = data['lighting_size'] * light_multiplier
         }
 
         if data['lighting_shift'] then

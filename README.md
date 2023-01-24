@@ -36,3 +36,5 @@ https://www.zapsplat.com/sound-effect-category/fireworks/
 Sampled from ChannelAGG's Japan Firework Videos:
 https://www.youtube.com/c/ChannelAGG
 
+Motar Crate Graphic & Firing Sound:
+1000MHz
