@@ -88,9 +88,82 @@ data:extend({
             projectile_creation_distance = 1.39375,
             projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
             range = 1,
-            sound = nil
+            sound = nil,
         },
 
         call_for_help_radius = 0,
     },
+    {
+        type="explosion",
+        name="mortar-crate-fire-explosion",
+        localised_name = {"entity-name.mortar-crate-fire-explosion"},
+        flags = {"not-on-map", "hidden"},
+        subgroup = "explosions",
+        animations =   {
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                frame_count = 2,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 2,
+                frame_count = 2,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 4,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 7,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 10,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            }
+        },
+        rotate = false,
+        --light = {intensity = 1, size = 10, color = {r=1.0, g=1.0, b=1.0}},
+        smoke = "smoke-fast",
+        smoke_count = 2,
+        smoke_slow_down_factor = 1
+    }
 })

@@ -155,7 +155,7 @@ function SharedFunctions.pick_firework(effect_id)
     return pick_firework[effect_id]
 end
 
-function SharedFunctions.create_firework(surface_index, source_position, effect_id, target_position)
+function SharedFunctions.create_firework(surface_index, source_position, effect_id, mortar, target_position)
     local surface = game.surfaces[surface_index]
     if surface and surface.valid and source_position then
         local name  = pick_firework[effect_id]()
@@ -172,6 +172,14 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
                 speed = math.random(20, 40) / 100,
                 max_range = math.random(global.min_travel_distance, global.max_travel_distance)
             })
+
+            if mortar then
+                surface.create_entity({
+                    name = "mortar-crate-fire-explosion",
+                    position = source_position,
+                    target = mortar
+                })
+            end
 
             if global.emit_pollution then
                 surface.pollute(source_position, global.emit_pollution_value)

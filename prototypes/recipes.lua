@@ -114,8 +114,9 @@ data:extend({
         energy_required = 5,
         ingredients =
         {
-            {"wood", 10},
-            {"plastic-bar", 20},
+            {"iron-plate", 20},
+            {"steel-plate", 10},
+            {"copper-plate", 20},
         },
         result = 'firework/mortar-crate',
         order="firework-10"
