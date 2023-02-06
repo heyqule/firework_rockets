@@ -21,7 +21,7 @@ data:extend {
         description = "firework-rocket-mortar-active-interval",
         setting_type = "startup",
         default_value = 51,
-        allowed_values = {19, 31, 41, 51, 61, 97, 113},
+        allowed_values = {3, 7, 11, 19, 31, 41, 51, 61, 97, 113},
         order = "firework-100"
     },
     {

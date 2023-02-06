@@ -164,6 +164,49 @@ data:extend({
         --light = {intensity = 1, size = 10, color = {r=1.0, g=1.0, b=1.0}},
         smoke = "smoke-fast",
         smoke_count = 2,
-        smoke_slow_down_factor = 1
+        smoke_slow_down_factor = 1,
+        sound = {
+            audible_distance_modifier = 0.3,
+            aggregation = {
+                max_count = 2,
+                count_already_playing = true,
+                remove = false,
+                progress_threshold = 0.5,
+            },
+            variations = {
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v1.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v2.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v3.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v4.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v5.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v6.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v7.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v8.ogg",
+                    volume = 0.4
+                }
+            }
+        }
     }
 })

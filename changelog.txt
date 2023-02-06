@@ -1,17 +1,20 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
-Date: 2023-01-29
+Date: 2023-02-06
 
   Graphic:
     - Added new mortar crate graphic.  Special Thanks: 1000MHz
-    - Added firing explosion to mortar.
+    - Added shooting graphic to mortar crate.
+
+  Sound:
+    - Added shooting sound for mortar crate (gun-turret). Special Thanks: 1000MHz
 
   Features:
     - Firework now emits pollution. (default: on, 5 units per shot, configurable in game setting)
 
   Changes:
     - Firework light radius multiplier is now configurable in startup settings.
-    - Double default light radius for all fireworks.
+    - Doubled default light radius for all fireworks.
     - *** Mortar crate recipe changed *** Required iron, steel, copper plates. instead of wood and plastic.
 
 ---------------------------------------------------------------------------------------------------
