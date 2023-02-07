@@ -171,7 +171,8 @@ local process_active_crates = function(event)
                 ScriptSharedFunctions.create_firework(
                         entity.surface.index,
                         entity.position,
-                        acceptable_rockets[invkey]
+                        acceptable_rockets[invkey],
+                        entity
                 )
                 inventory.remove({name=invkey,count=1})
                 add_statistic(entity, invkey, 1)

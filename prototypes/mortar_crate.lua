@@ -36,20 +36,30 @@ data:extend({
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275
+                    scale = 0.5
+                },
+                {
+                    filename = "__firework_rockets_assets__/graphics/mortar_crate_mask.png",
+                    priority = "high",
+                    width = 152,
+                    height = 152,
+                    direction_count = 1,
+                    frame_count = 1,
+                    apply_runtime_tint = true,
+                    scale = 0.5
                 },
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate_shadow.png",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275,
-                    shift = {0.8, -0.1},
+                    scale = 0.5,
+                    shift = {1.25, 0},
                     draw_as_shadow = true
                 }
             },
@@ -60,11 +70,11 @@ data:extend({
                 {
                     filename = "__firework_rockets_assets__/graphics/mortar_crate.png",
                     priority = "high",
-                    width = 256,
-                    height = 256,
+                    width = 152,
+                    height = 152,
                     direction_count = 1,
                     frame_count = 1,
-                    scale = 0.275
+                    scale = 0.5
                 }
             },
         },
@@ -78,9 +88,125 @@ data:extend({
             projectile_creation_distance = 1.39375,
             projectile_center = {0, -0.0875}, -- same as gun_turret_attack shift
             range = 1,
-            sound = nil
+            sound = nil,
         },
 
         call_for_help_radius = 0,
     },
+    {
+        type="explosion",
+        name="mortar-crate-fire-explosion",
+        localised_name = {"entity-name.mortar-crate-fire-explosion"},
+        flags = {"not-on-map", "hidden"},
+        subgroup = "explosions",
+        animations =   {
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                frame_count = 2,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 2,
+                frame_count = 2,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 4,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 7,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            },
+            {
+                filename = "__base__/graphics/entity/explosion-gunshot/explosion-gunshot.png",
+                draw_as_glow = true,
+                priority = "extra-high",
+                width = 34,
+                height = 38,
+                x = 34 * 10,
+                frame_count = 3,
+                animation_speed = 0.5,
+                shift = {0, 0},
+                scale = 1.5
+            }
+        },
+        rotate = false,
+        --light = {intensity = 1, size = 10, color = {r=1.0, g=1.0, b=1.0}},
+        smoke = "smoke-fast",
+        smoke_count = 2,
+        smoke_slow_down_factor = 1,
+        sound = {
+            audible_distance_modifier = 0.3,
+            aggregation = {
+                max_count = 2,
+                count_already_playing = true,
+                remove = false,
+                progress_threshold = 0.5,
+            },
+            variations = {
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v1.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v2.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v3.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v4.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v5.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v6.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v7.ogg",
+                    volume = 0.4
+                },
+                {
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v8.ogg",
+                    volume = 0.4
+                }
+            }
+        }
+    }
 })

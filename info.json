@@ -1,6 +1,6 @@
 {
   "name": "firework_rockets",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "date": "2022-08-29",
   "title": "Firework Rockets",
   "author": "heyqule",
@@ -8,6 +8,6 @@
   "factorio_version": "1.1",
   "dependencies": [
     "base >= 1.1.0",
-    "firework_rockets_assets >= 1.0.0"
+    "firework_rockets_assets >= 1.1.0"
   ]
 }

@@ -7,12 +7,21 @@
 data:extend {
     --- Startup Tab
     {
+        type = "double-setting",
+        name = "firework-rocket-lighting-multiplier",
+        description = "firework-rocket-lighting-multiplier",
+        setting_type = "startup",
+        default_value = 1,
+        allowed_values = {0, 0.5, 1, 1.5, 2, 2.5, 3},
+        order = "firework-001"
+    },
+    {
         type = "int-setting",
         name = "firework-rocket-mortar-active-interval",
         description = "firework-rocket-mortar-active-interval",
         setting_type = "startup",
         default_value = 51,
-        allowed_values = {19, 31, 41, 51, 61, 97, 113},
+        allowed_values = {3, 7, 11, 19, 31, 41, 51, 61, 97, 113},
         order = "firework-100"
     },
     {
@@ -78,5 +87,22 @@ data:extend {
         default_value = '16-48',
         allowed_values = {'8-40','10-42','16-48','32-64','48-80','60-90','72-104'},
         order = "firework-100"
+    },
+    {
+        type = "bool-setting",
+        name = "firework-rocket-emit-pollution",
+        description = "firework-rocket-emit-pollution",
+        setting_type = "runtime-global",
+        default_value = true,
+        order = "firework-110"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-emit-pollution-value",
+        description = "firework-rocket-emit-pollution-value",
+        setting_type = "runtime-global",
+        default_value = 5,
+        allowed_values = {1, 2, 5, 10, 20, 50, 100},
+        order = "firework-111"
     },
 }
