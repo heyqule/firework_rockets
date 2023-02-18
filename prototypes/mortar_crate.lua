@@ -166,7 +166,7 @@ data:extend({
         smoke_count = 2,
         smoke_slow_down_factor = 1,
         sound = {
-            audible_distance_modifier = 0.3,
+            audible_distance_modifier = 1,
             aggregation = {
                 max_count = 2,
                 count_already_playing = true,
@@ -175,36 +175,36 @@ data:extend({
             },
             variations = {
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v1.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v1re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v2.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v2re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v3.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v3re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v4.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v4re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v5.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v5re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v6.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v6re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v7.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v7re.ogg",
+                    volume = 1.33
                 },
                 {
-                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v8.ogg",
-                    volume = 0.4
+                    filename = "__firework_rockets_assets__/sound/fireworks_shot114v8re.ogg",
+                    volume = 1.33
                 }
             }
         }

@@ -1,13 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2023-02-16
+
+  Sounds:
+    - Change the volume and audio files of the shot to a quieter one. By: 1000MHz
+
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2023-02-06
 
-  Graphic:
+  Graphics:
     - Added new mortar crate graphic.  Special Thanks: 1000MHz
     - Added shooting graphic to mortar crate.
 
-  Sound:
-    - Added shooting sound for mortar crate (gun-turret). Special Thanks: 1000MHz
+  Sounds:
+    - Added shooting sound for mortar crate. Special Thanks: 1000MHz
 
   Features:
     - Firework now emits pollution. (default: on, 5 units per shot, configurable in game setting)
