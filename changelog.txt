@@ -1,9 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+Date: 2023-03-05
+
+  Changes:
+    - Fixed mortar selection box misalignment. (By: 1000MHz)
+
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 2023-02-16
 
   Sounds:
-    - Change the volume and audio files of the shot to a quieter one. By: 1000MHz
+    - Changed the volume and audio files of the shot to a quieter one. By: 1000MHz
+
+  Changes:
+    - Added ukrainian translation by Met_en_Bouldry
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0

@@ -41,3 +41,12 @@ https://www.youtube.com/c/ChannelAGG
 
 Mortar Crate Graphics and mortar shooting sound:
 1000MHz
+
+### SPECIAL THANKS TO ALL CROWDIN TRANSLATORS
+- UK: Met_en_Bouldry
+
+You can help translate this mod directly online by going to the following link and finding "ERM" or "Enemy Race Manager":
+
+https://crowdin.com/project/factorio-mods-localization
+
+New translation will be released in the next version.

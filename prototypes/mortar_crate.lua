@@ -19,7 +19,7 @@ data:extend({
         corpse = "small-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-0.9, -0.9 }, {0.9, 0.9}},
-        selection_box = {{-1, -1 }, {1, 1}},
+        selection_box = {{-1, -1.1 }, {1.1, 1}},
         damaged_trigger_effect = hit_effects.entity(),
         rotation_speed = 0.015,
         preparing_speed = 0.08,
