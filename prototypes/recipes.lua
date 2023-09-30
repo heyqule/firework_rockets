@@ -16,7 +16,7 @@ data:extend({
             {"red-wire", 10}
         },
         result = 'firework/warm-rocket',
-        result_count = 10,
+        result_count = 20,
         order="firework-01"
     },
     {
@@ -30,7 +30,7 @@ data:extend({
             {"green-wire", 10}
         },
         result = 'firework/cool-rocket',
-        result_count = 10,
+        result_count = 20,
         order="firework-02"
     },
     {
