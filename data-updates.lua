@@ -43,3 +43,84 @@ if settings.startup['firework-rocket-fire-hazard'].value then
         end
     end
 end
+
+
+if settings.startup['firework-rocket-fire-hazard'].value then
+    local target_probability = settings.startup['firework-rocket-fire-hazard-chance'].value / 100
+    for key, explosion in pairs(data.raw['explosion']) do
+        if string.find(key, "firework-") then
+            explosion['created_effect'] = {
+                {
+                    type = "direct",
+                    probability = target_probability,
+                    action_delivery =
+                    {
+                        type = "instant",
+                        target_effects =
+                        {
+                            {
+                                type = "create-fire",
+                                entity_name = "fire-flame",
+                                initial_ground_flame_count = 40,
+                                offset_deviation = {{-5,-5}, {5, 5}}
+                            }
+                        },
+                    }
+                }
+            }
+        end
+    end
+end
+
+local process_death_effect = function(entity, chance)
+    local target_probability =  chance / 100
+    if entity['dying_trigger_effect'] == nil then
+        entity['dying_trigger_effect'] = {}
+    end
+
+    table.insert(entity['dying_trigger_effect'],
+                {
+                    type='script',
+                    effect_id=RANDOM_ROCKET_EFFECT_ID,
+                    probability = target_probability,
+                }
+            )
+end
+
+
+if settings.startup['firework-rocket-unit-death'].value then
+    local applicable_types = {
+        "unit", "character"
+    }
+
+    for _, type in pairs(applicable_types) do
+        for _, unit in pairs(data.raw[type]) do
+            process_death_effect(unit, settings.startup['firework-rocket-unit-death-chance'].value)
+        end
+    end
+end
+
+if settings.startup['firework-rocket-structure-death'].value then
+    local applicable_types = {
+        "unit-spawner",
+        "turret",
+        "artillery-turret",
+        "assembling-machine",
+        "radar",
+        "boiler",
+        "generator",
+        "furnace",
+        "ammo-turret",
+        "electric-turret",
+        "fluid-turret",
+        "rocket-silo",
+        "roboport",
+        "mining-drill",
+    }
+
+    for _, type in pairs(applicable_types) do
+        for _, unit in pairs(data.raw[type]) do
+            process_death_effect(unit, settings.startup['firework-rocket-structure-death-chance'].value)
+        end
+    end
+end

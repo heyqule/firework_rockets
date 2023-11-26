@@ -11,7 +11,7 @@ local weapon_trigger_effects = function(event)
     then
         ScriptSharedFunctions.create_firework(
             event.surface_index,
-            event.target_position,
+            event.source_entity.position,
             event.effect_id
         )
     end

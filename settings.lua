@@ -78,6 +78,40 @@ data:extend {
         allowed_values = {1, 2, 3, 5, 10, 20, 33, 50},
         order = "firework-121"
     },
+    {
+        type = "bool-setting",
+        name = "firework-rocket-structure-death",
+        description = "firework-rocket-structure-death",
+        setting_type = "startup",
+        default_value = false,
+        order = "firework-130"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-structure-death-chance",
+        description = "firework-rocket-structure-death-chance",
+        setting_type = "startup",
+        default_value = 66,
+        allowed_values = {10, 25, 33, 50, 66, 75, 90},
+        order = "firework-131"
+    },
+    {
+        type = "bool-setting",
+        name = "firework-rocket-unit-death",
+        description = "firework-rocket-unit-death",
+        setting_type = "startup",
+        default_value = false,
+        order = "firework-140"
+    },
+    {
+        type = "int-setting",
+        name = "firework-rocket-unit-death-chance",
+        description = "firework-rocket-unit-death-chance",
+        setting_type = "startup",
+        default_value = 33,
+        allowed_values = {10, 25, 33, 50, 66, 75, 90},
+        order = "firework-141"
+    },
     --- Global Tab
     {
         type = "string-setting",
