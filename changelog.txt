@@ -5,7 +5,7 @@ Date: 2023-11-26
   Features:
    - Units on death may spawn a firework. (Default: off)
    - Structures on death may spawn a firework. (Default: off)
-   - Add new option to celebrate the holiday :)
+   - Add new options to celebrate the holiday :)
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.3
