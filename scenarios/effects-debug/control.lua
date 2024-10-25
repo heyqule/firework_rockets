@@ -1,9 +1,9 @@
 require('util')
 --local scenarios_helper = require('__enemyracemanager__/scenarios/shared.lua')
 
-local Event = require('__stdlib__/stdlib/event/event')
 
-Event.register(defines.events.on_player_created, function(event)
+
+script.on_event(defines.events.on_player_created, function(event)
     local surface = game.surfaces[1]
     local player = game.players[1]
     local force = player.force
@@ -12,6 +12,12 @@ Event.register(defines.events.on_player_created, function(event)
     surface.daytime = 0.5
     --surface.daytime = 1
     surface.freeze_daytime = true
+
+    force.enable_all_technologies()
+    force.enable_all_recipes()
+    force.research_all_technologies()
+
+    player.cheat_mode = true
 
     -- Comment out the following to start with godmode
     --if player.character then player.character.destroy() end
@@ -58,9 +64,9 @@ local firework_explosions = function(surface)
     end
 end
 
-Event.on_nth_tick(180, function(event)
-    local surface = game.surfaces[1]
-
-    firework_explosions(surface)
-end)
+--script.on_nth_tick(180, function(event)
+--    local surface = game.surfaces[1]
+--
+--    firework_explosions(surface)
+--end)
 

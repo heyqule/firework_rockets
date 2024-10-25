@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2024-10-24
+
+  Features:
+    - Updated to Factorio 2.0
+    - Mortar crates now support circuit to control firing rate.  The value are present in ticks. 60 = 1 second.
+    - Their behaviors depend on Active Mortar Process Interval and Active Mortar Process Batch settings.
+    - Set Active Mortar Process Interval to lower value and Active Mortar Process Batch to higher value to have better timing accuracy.  This may have performance implication.
+    - Mortar crate circuit can also override rocket's shooting range, range 8 - 100 tile.  Each type of firework rocket can have its own shooting range.
+    - Basic mortar crate circuit showcase: https://youtu.be/SBOhHnJwnj8
+
+  Changes:
+    - Active Mortar Process Batch default changed from 12 -> 24.
+    - Inactive Mortar Process Batch default changed from 24 -> 48.
+    - Changed "Produce 1000 random rocket" Achievement to "Shoot 100 random rocket with hand held launcher" Achievement.
+
+
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 2023-11-26
 

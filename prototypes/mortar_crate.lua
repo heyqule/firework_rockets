@@ -10,11 +10,11 @@ local hit_effects = require ("__base__.prototypes.entity.hit-effects")
 data:extend({
     {
         type = "ammo-turret",
-        name = "firework/mortar-crate",
+        name = "firework-mortar_crate",
         icon = "__firework_rockets_assets__/graphics/icons/mortar_crate.png",
         icon_size = 64, icon_mipmaps = 4,
-        flags = {"placeable-player", "player-creation"},
-        minable = {mining_time = 0.5, result = "firework/mortar-crate"},
+        flags = {"placeable-player", "player-creation", "get-by-unit-number"},
+        minable = {mining_time = 0.5, result = "firework-mortar_crate"},
         max_health = 400,
         corpse = "small-remnants",
         dying_explosion = "medium-explosion",
@@ -30,6 +30,9 @@ data:extend({
         alert_when_attacking = false,
         open_sound = sounds.machine_open,
         close_sound = sounds.machine_close,
+        graphics_set = {},
+        circuit_connector = circuit_connector_definitions["gun-turret"],
+        circuit_wire_max_distance = default_circuit_wire_max_distance,
         folded_animation =
         {
             layers = {
@@ -95,9 +98,9 @@ data:extend({
     },
     {
         type="explosion",
-        name="mortar-crate-fire-explosion",
-        localised_name = {"entity-name.mortar-crate-fire-explosion"},
-        flags = {"not-on-map", "hidden"},
+        name="mortar_crate-fire-explosion",
+        localised_name = {"entity-name.mortar_crate-fire-explosion"},
+        flags = {"not-on-map"},
         subgroup = "explosions",
         animations =   {
             {

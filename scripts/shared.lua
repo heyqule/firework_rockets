@@ -96,7 +96,7 @@ local large_rocket_firework = {
     'firework-trail-firework-10-yellow-1',
     'firework-trail-firework-10-blue-1',
 }
-local large_rocket_firework_size = #small_rocket_firework
+local large_rocket_firework_size = #large_rocket_firework
 
 local flare_rocket_firework = {
     'firework-trail-firework-8-orange-1',
@@ -155,10 +155,13 @@ function SharedFunctions.pick_firework(effect_id)
     return pick_firework[effect_id]
 end
 
-function SharedFunctions.create_firework(surface_index, source_position, effect_id, mortar, target_position)
+function SharedFunctions.create_firework(surface_index, source_position, effect_id, mortar, target_position, max_range)
     local surface = game.surfaces[surface_index]
     if surface and surface.valid and source_position then
         local name  = pick_firework[effect_id]()
+        if not max_range then
+            max_range = math.random(storage.min_travel_distance, storage.max_travel_distance)
+        end
         if name and source_position then
             target_position = target_position or
                     {
@@ -170,19 +173,19 @@ function SharedFunctions.create_firework(surface_index, source_position, effect_
                 position = source_position,
                 target = target_position,
                 speed = math.random(20, 40) / 100,
-                max_range = math.random(global.min_travel_distance, global.max_travel_distance)
+                max_range = max_range
             })
 
             if mortar then
                 surface.create_entity({
-                    name = "mortar-crate-fire-explosion",
+                    name = "mortar_crate-fire-explosion",
                     position = source_position,
                     target = mortar
                 })
             end
 
-            if global.emit_pollution then
-                surface.pollute(source_position, global.emit_pollution_value)
+            if storage.emit_pollution then
+                surface.pollute(source_position, storage.emit_pollution_value)
             end
         end
     end

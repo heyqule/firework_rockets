@@ -12,3 +12,5 @@ REGULAR_ROCKET_EFFECT_ID = 'fw-rrf'
 SMALL_ROCKET_EFFECT_ID = 'fw-sml'
 LARGE_ROCKET_EFFECT_ID = 'fw-lrg'
 FLARE_ROCKET_EFFECT_ID = 'fw-flr'
+
+MORTAR_CRATE_SIGNAL = 'firework-mortar_crate'

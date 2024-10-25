@@ -11,19 +11,19 @@ local weapon_trigger_effects = function(event)
     then
         ScriptSharedFunctions.create_firework(
             event.surface_index,
-            event.source_entity.position,
+            event.target_position,
             event.effect_id
         )
     end
 end
 
-local update_globals = function()
-    global.min_travel_distance, global.max_travel_distance =
+local update_storages = function()
+    storage.min_travel_distance, storage.max_travel_distance =
         string.match(settings.global['firework-rocket-travel-range'].value, "(%d+)%-(%d+)")
-    global.min_travel_distance = tonumber(global.min_travel_distance)
-    global.max_travel_distance = tonumber(global.max_travel_distance)
-    global.emit_pollution = game.map_settings.pollution.enabled and settings.global['firework-rocket-emit-pollution'].value
-    global.emit_pollution_value = settings.global['firework-rocket-emit-pollution-value'].value
+    storage.min_travel_distance = tonumber(storage.min_travel_distance)
+    storage.max_travel_distance = tonumber(storage.max_travel_distance)
+    storage.emit_pollution = game.map_settings.pollution.enabled and settings.global['firework-rocket-emit-pollution'].value
+    storage.emit_pollution_value = settings.global['firework-rocket-emit-pollution-value'].value
 end
 
 local firework_handling = {}
@@ -31,15 +31,15 @@ local firework_handling = {}
 firework_handling.events =
 {
     [defines.events.on_script_trigger_effect] = weapon_trigger_effects,
-    [defines.events.on_runtime_mod_setting_changed] = update_globals
+    [defines.events.on_runtime_mod_setting_changed] = update_storages
 }
 
 firework_handling.on_init = function(event)
-    update_globals()
+    update_storages()
 end
 
 firework_handling.on_configuration_changed = function(event)
-    update_globals()
+    update_storages()
 end
 
 return firework_handling

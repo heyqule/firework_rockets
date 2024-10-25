@@ -7,7 +7,7 @@
 data:extend({
     {
         type = "item",
-        name = 'firework/mortar-crate',
+        name = 'firework-mortar_crate',
         icons = {
             {
                 icon = "__firework_rockets_assets__/graphics/icons/mortar_crate.png",
@@ -15,12 +15,12 @@ data:extend({
             },
         },
         subgroup = "firework-rockets",
-        place_result = 'firework/mortar-crate',
+        place_result = 'firework-mortar_crate',
         stack_size = 50
     },
     {
         type = "ammo",
-        name = "firework/random-rocket",
+        name = "firework-random_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -34,6 +34,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -44,7 +45,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/random-rocket",
+                    projectile = "firework-random_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -64,7 +65,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/colorful-rocket",
+        name = "firework-colorful_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -78,6 +79,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -88,7 +90,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/colorful-rocket",
+                    projectile = "firework-colorful_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -108,7 +110,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/warm-rocket",
+        name = "firework-warm_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -122,6 +124,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -132,7 +135,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/warm-rocket",
+                    projectile = "firework-warm_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -152,7 +155,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/cool-rocket",
+        name = "firework-cool_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -166,6 +169,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -176,7 +180,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/cool-rocket",
+                    projectile = "firework-cool_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -196,7 +200,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/small-rocket",
+        name = "firework-small_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -210,6 +214,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -220,7 +225,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/small-rocket",
+                    projectile = "firework-small_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -240,7 +245,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/large-rocket",
+        name = "firework-large_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -254,6 +259,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -264,7 +270,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/large-rocket",
+                    projectile = "firework-large_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,
@@ -284,7 +290,7 @@ data:extend({
     },
     {
         type = "ammo",
-        name = "firework/flare-rocket",
+        name = "firework-flare_rocket",
         flags = {'hide-from-bonus-gui'},
         icons = {
             {
@@ -298,6 +304,7 @@ data:extend({
                 shift = {-9,-9}
             },
         },
+        ammo_category = "rocket",
         ammo_type =
         {
             category = "rocket",
@@ -308,7 +315,7 @@ data:extend({
                 action_delivery =
                 {
                     type = "projectile",
-                    projectile = "firework/flare-rocket",
+                    projectile = "firework-flare_rocket",
                     starting_speed = 0.1,
                     max_range = 20,
                     min_range = 10,

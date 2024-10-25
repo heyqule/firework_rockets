@@ -7,42 +7,42 @@
 data:extend({
     {
         type = "technology",
-        name = 'firework/techs',
+        name = 'firework-techs',
         icon_size = 64,
         icon = "__firework_rockets_assets__/graphics/icons/firework_tech.png",
         effects =
         {
             {
                 type = "unlock-recipe",
-                recipe = "firework/random-rocket"
+                recipe = "firework-random_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/colorful-rocket"
+                recipe = "firework-colorful_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/cool-rocket"
+                recipe = "firework-cool_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/warm-rocket"
+                recipe = "firework-warm_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/large-rocket"
+                recipe = "firework-large_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/small-rocket"
+                recipe = "firework-small_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/flare-rocket"
+                recipe = "firework-flare_rocket"
             },
             {
                 type = "unlock-recipe",
-                recipe = "firework/mortar-crate"
+                recipe = "firework-mortar_crate"
             }
         },
         prerequisites = {"rocketry"},

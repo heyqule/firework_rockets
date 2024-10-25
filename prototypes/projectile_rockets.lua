@@ -18,7 +18,7 @@ require '__firework_rockets__/constant'
 data:extend({
     {
         type = "projectile",
-        name = "firework/random-rocket",
+        name = "firework-random_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -39,21 +39,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/colorful-rocket",
+        name = "firework-colorful_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -75,21 +67,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/warm-rocket",
+        name = "firework-warm_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -111,21 +95,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/cool-rocket",
+        name = "firework-cool_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -147,21 +123,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/small-rocket",
+        name = "firework-small_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -183,21 +151,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/large-rocket",
+        name = "firework-large_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -219,21 +179,13 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
     {
         type = "projectile",
-        name = "firework/flare-rocket",
+        name = "firework-flare_rocket",
         flags = {"not-on-map"},
         acceleration = 0.005,
         turn_speed = 0,
@@ -255,16 +207,8 @@ data:extend({
                 }
             }
         },
-        animation =
-        {
-            filename = "__base__/graphics/entity/rocket/rocket.png",
-            draw_as_glow = true,
-            frame_count = 8,
-            line_length = 8,
-            width = 9,
-            height = 35,
-            shift = {0, 0},
-            priority = "high"
-        }
+        animation = require("__base__.prototypes.entity.rocket-projectile-pictures").animation({1, 0.8, 0.3}),
+        shadow = require("__base__.prototypes.entity.rocket-projectile-pictures").shadow,
+        smoke = require("__base__.prototypes.entity.rocket-projectile-pictures").smoke,
     },
 })

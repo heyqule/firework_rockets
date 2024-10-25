@@ -7,118 +7,139 @@
 data:extend({
     {
         type = "recipe",
-        name = 'firework/warm-rocket',
+        name = 'firework-warm_rocket',
         enabled = false,
         energy_required = 5,
         ingredients =
         {
-            {"rocket", 10},
-            {"red-wire", 10}
+            {type="item", name="rocket", amount=10},
         },
-        result = 'firework/warm-rocket',
-        result_count = 20,
+        results = {
+            {type="item", name="firework-warm_rocket", amount=20},
+        },
+        allow_quality = false,
+        auto_recycle = false,
         order="firework-01"
     },
     {
         type = "recipe",
-        name = 'firework/cool-rocket',
+        name = 'firework-cool_rocket',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"rocket", 10},
-            {"green-wire", 10}
+            {type="item", name="rocket", amount=10},
         },
-        result = 'firework/cool-rocket',
-        result_count = 20,
+        results = {
+            {type="item", name="firework-cool_rocket", amount=20},
+        },
         order="firework-02"
     },
     {
         type = "recipe",
-        name = 'firework/colorful-rocket',
+        name = 'firework-colorful_rocket',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"firework/warm-rocket", 5},
-            {"firework/cool-rocket", 5},
-            {"red-wire", 5},
-            {"green-wire", 5}
+            {type="item", name="firework-warm_rocket", amount=5},
+            {type="item", name="firework-cool_rocket", amount=5},
         },
-        result = 'firework/colorful-rocket',
-        result_count = 10,
+        results = {
+            {type="item", name="firework-colorful_rocket", amount=10},
+        },
         order="firework-03"
     },
     {
         type = "recipe",
-        name = 'firework/random-rocket',
+        name = 'firework-random_rocket',
         enabled = false,
         energy_required = 10,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"firework/colorful-rocket",5},
-            {"firework/warm-rocket",5},
-            {"firework/cool-rocket",5},
-            {"decider-combinator",5}
+            {type="item", name="firework-warm_rocket", amount=5},
+            {type="item", name="firework-cool_rocket", amount=5},
+            {type="item", name="firework-colorful_rocket", amount=5},
+            {type="item", name="decider-combinator", amount=5},
         },
-        result = 'firework/random-rocket',
-        result_count = 10,
+        results = {
+            {type="item", name="firework-random_rocket", amount=10},
+        },
         order="firework-04"
     },
     {
         type = "recipe",
-        name = 'firework/small-rocket',
+        name = 'firework-small_rocket',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"firework/warm-rocket", 5},
-            {"firework/cool-rocket", 5},
+            {type="item", name="firework-warm_rocket", amount=5},
+            {type="item", name="firework-cool_rocket", amount=5},
         },
-        result = 'firework/small-rocket',
-        result_count = 10,
+        results = {
+            {type="item", name="firework-small_rocket", amount=10},
+        },
         order="firework-05"
     },
     {
         type = "recipe",
-        name = 'firework/large-rocket',
+        name = 'firework-large_rocket',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"firework/warm-rocket", 5},
-            {"firework/cool-rocket", 5},
+            {type="item", name="firework-warm_rocket", amount=5},
+            {type="item", name="firework-cool_rocket", amount=5},
         },
-        result = 'firework/large-rocket',
-        result_count = 10,
+        results = {
+            {type="item", name="firework-large_rocket", amount=10},
+        },
         order="firework-06"
     },
     {
         type = "recipe",
-        name = 'firework/flare-rocket',
+        name = 'firework-flare_rocket',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"firework/warm-rocket", 5},
-            {"firework/cool-rocket", 5},
+            {type="item", name="firework-warm_rocket", amount=5},
+            {type="item", name="firework-cool_rocket", amount=5},
         },
-        result = 'firework/flare-rocket',
-        result_count = 10,
+        results = {
+            {type="item", name="firework-flare_rocket", amount=10},
+        },
         order="firework-07"
     },
     {
         type = "recipe",
-        name = 'firework/mortar-crate',
+        name = 'firework-mortar_crate',
         enabled = false,
         energy_required = 5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients =
         {
-            {"iron-plate", 20},
-            {"steel-plate", 10},
-            {"copper-plate", 20},
+            {type="item", name="iron-plate", amount=20},
+            {type="item", name="steel-plate", amount=10},
+            {type="item", name="copper-plate", amount=20}
         },
-        result = 'firework/mortar-crate',
+        results = {
+            {type="item", name="firework-mortar_crate", amount=1},
+        },
         order="firework-10"
     },
 })

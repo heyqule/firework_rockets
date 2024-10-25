@@ -7,32 +7,32 @@
 data:extend({
     {
         type = "build-entity-achievement",
-        name = "firework_rockets/party_automation",
-        to_build = 'firework/mortar-crate',
-        amount = 50,
+        name = "firework_rockets-party_automation",
+        to_build = 'firework-mortar_crate',
+        amount = 20,
         icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
-        limited_to_one_game = true,
+        allow_without_fight = true,
         order = 'z[firework]-01-party-automation'
     },
     {
-        type = "produce-achievement",
-        name = "firework_rockets/party_starter",
-        item_product = 'firework/random-rocket',
-        amount = 1000,
+        type = "shoot-achievement",
+        name = "firework_rockets-party_starter",
+        ammo_type = 'firework-random_rocket',
+        amount = 100,
         icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
-        limited_to_one_game = true,
+        allow_without_fight = true,
         order = 'z[firework]-02-party-starter'
     },
     {
         type = "produce-achievement",
-        name = "firework_rockets/eternal_party",
-        item_product = 'firework/random-rocket',
+        name = "firework_rockets-eternal_party",
+        item_product = 'firework-random_rocket',
         amount = 1000000,
         icon = "__firework_rockets_assets__/graphics/achievement/icon.png",
         icon_size = 128,
-        limited_to_one_game = true,
+        limited_to_one_game = false,
         order = 'z[firework]-03-eternal-party'
     }
 })

@@ -29,7 +29,7 @@ data:extend {
         name = "firework-rocket-mortar-active-batch",
         description = "firework-rocket-mortar-active-batch",
         setting_type = "startup",
-        default_value = 12,
+        default_value = 24,
         minimum_value = 6,
         maximum_value = 240,
         order = "firework-101"
@@ -39,7 +39,7 @@ data:extend {
         name = "firework-rocket-mortar-inactive-batch",
         description = "firework-rocket-mortar-inactive-batch",
         setting_type = "startup",
-        default_value = 24,
+        default_value = 48,
         minimum_value = 12,
         maximum_value = 480,
         order = "firework-103"

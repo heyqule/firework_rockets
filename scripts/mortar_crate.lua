@@ -86,34 +86,30 @@ local remove_crate = function(crateList, crateKey)
 end
 
 local acceptable_rockets = {
-    ['firework/random-rocket'] = RANDOM_ROCKET_EFFECT_ID,
-    ['firework/colorful-rocket'] = COLORFUL_ROCKET_EFFECT_ID,
-    ['firework/cool-rocket'] = COOL_ROCKET_EFFECT_ID,
-    ['firework/warm-rocket'] = WARM_ROCKET_EFFECT_ID,
-    ['firework/small-rocket'] = SMALL_ROCKET_EFFECT_ID,
-    ['firework/large-rocket'] = LARGE_ROCKET_EFFECT_ID,
-    ['firework/flare-rocket'] = FLARE_ROCKET_EFFECT_ID,
+    ['firework-random_rocket'] = RANDOM_ROCKET_EFFECT_ID,
+    ['firework-colorful_rocket'] = COLORFUL_ROCKET_EFFECT_ID,
+    ['firework-cool_rocket'] = COOL_ROCKET_EFFECT_ID,
+    ['firework-warm_rocket'] = WARM_ROCKET_EFFECT_ID,
+    ['firework-small_rocket'] = SMALL_ROCKET_EFFECT_ID,
+    ['firework-large_rocket'] = LARGE_ROCKET_EFFECT_ID,
+    ['firework-flare_rocket'] = FLARE_ROCKET_EFFECT_ID,
 }
 
 local statistics = {}
 
 local on_created_entity = function(event)
-    local entity = event.created_entity
-    if not (entity and entity.valid and entity.name == 'firework/mortar-crate') then return end
-    local surface = entity.surface
-    local position = entity.position
-    local key = surface.index .. '-' .. position.x .. '-' .. position.y
-    add_crate(deployed_inactive_crates, key, {
+    local entity = event.entity
+    if not (entity and entity.valid and entity.name == 'firework-mortar_crate') then return end
+    add_crate(deployed_inactive_crates, entity.unit_number, {
         entity = entity,
     })
 end
 
 local on_entity_removed = function(event)
     local entity = event.entity
-    if not (entity and entity.valid and entity.name == 'firework/mortar-crate') then return end
-    local surface = entity.surface
-    local position = entity.position
-    local key = surface.index .. '-' .. position.x .. '-' .. position.y
+    if not (entity and entity.valid and entity.name == 'firework-mortar_crate') then return end
+
+    local key = entity.unit_number
     remove_crate(deployed_inactive_crates, key)
     remove_crate(deployed_active_crates, key)
 end
@@ -121,10 +117,10 @@ end
 local add_statistic = function(entity, item_name, count)
     local force = entity.force;
     if force then
-        if statistics[force.name] == nil then
-            statistics[force.name] = force.item_production_statistics
+        if statistics[force.name..entity.surface.index] == nil then
+            statistics[force.name..entity.surface.index] = force.get_item_production_statistics(entity.surface)
         end
-        statistics[force.name].on_flow(item_name, count * -1)
+        statistics[force.name..entity.surface.index].on_flow(item_name, count * -1)
     end
 end
 
@@ -157,26 +153,46 @@ local process_active_crates = function(event)
         end
 
         local entity = turret.entity
-        if not (entity and entity.valid) then
+        if not (entity and entity.valid) or entity.status ~= defines.entity_status.working then
             remove_crate(deployed_active_crates, active_processing_id)
+            add_crate(deployed_inactive_crates, active_processing_id, {
+                entity = turret.entity
+            })
             goto process_active_crates_for_continue
         end
 
+
+        local next_fire_interval = math.random(3,10) * 61
+        local max_range
         local inventory = entity.get_inventory(defines.inventory.turret_ammo)
         local contents = inventory.get_contents()
         local fired = false
-        for invkey, value in pairs(contents) do
-            if acceptable_rockets[invkey] and value > 0
+        for _, data in pairs(contents) do
+            if acceptable_rockets[data.name] and data.count > 0
             then
+                -- get mortar crate signal to determine the shooting timer
+                local time_signal = entity.get_signal({name=MORTAR_CRATE_SIGNAL, type='item'},defines.wire_connector_id.circuit_red,defines.wire_connector_id.circuit_green)
+                if time_signal > 0 then
+                        -- The minimum value is "Active Mortar Process Interval" settings, since it won't run lower than that interval.
+                        next_fire_interval = time_signal
+                end
+                -- get rocket specific signal to determine the shooting range
+                local range_signal = entity.get_signal({name=data.name, type='item'}, defines.wire_connector_id.circuit_red,defines.wire_connector_id.circuit_green)
+                if range_signal > 0 then
+                    max_range = math.max(math.min(range_signal,100),8)
+                end
+
                 ScriptSharedFunctions.create_firework(
                         entity.surface.index,
                         entity.position,
-                        acceptable_rockets[invkey],
-                        entity
+                        acceptable_rockets[data.name],
+                        entity,
+                        nil,
+                        max_range
                 )
-                inventory.remove({name=invkey,count=1})
-                add_statistic(entity, invkey, 1)
-                turret.next_tick = event.tick + math.random(3,10) * 61
+                inventory.remove({name=data.name,count=1})
+                add_statistic(entity, data.name, 1)
+                turret.next_tick = event.tick + next_fire_interval
                 fired = true
             end
         end
@@ -211,6 +227,7 @@ local process_inactive_crates = function(event)
     for i = 0, MAX_INACTIVE_PER_BATCH do
         pick_new_inactive_id()
         local turret = deployed_inactive_crates.crates[inactive_processing_id]
+
         if not turret then
             break;
         end
@@ -220,11 +237,10 @@ local process_inactive_crates = function(event)
             remove_crate(deployed_inactive_crates, inactive_processing_id)
             goto process_inactive_crates_for_continue
         end
-
         local inventory = entity.get_inventory(defines.inventory.turret_ammo)
         local contents = inventory.get_contents()
-        for invkey, value in pairs(contents) do
-            if acceptable_rockets[invkey] and value > 0
+        for _, data in pairs(contents) do
+            if acceptable_rockets[data.name] and data.count > 0
             then
                 add_crate(deployed_active_crates, inactive_processing_id, {
                     entity = turret.entity,
@@ -237,31 +253,6 @@ local process_inactive_crates = function(event)
         ::process_inactive_crates_for_continue::
     end
 end
-
--- 1.0 to 1.1 migration
-local deployed_crate_migration = function()
-    if global.deployed_crates then
-        for _, turret in pairs(global.deployed_crates) do
-            local surface = turret.entity.surface
-            local position = turret.entity.position
-            local key = surface.index .. '-' .. position.x .. '-' .. position.y
-            add_crate(deployed_inactive_crates, key, {
-                entity = turret.entity,
-            })
-        end
-    end
-
-    -- Reset Head
-    local first_create_key = next(deployed_inactive_crates.crates)
-    deployed_inactive_crates.head = first_create_key
-    deployed_inactive_crates.size = table_size(deployed_inactive_crates.crates)
-
-    local first_create_key = next(deployed_active_crates.crates)
-    deployed_active_crates.head = first_create_key
-    deployed_active_crates.size = table_size(deployed_active_crates.crates)
-
-end
-
 
 local mortar_crate = {}
 
@@ -284,17 +275,13 @@ mortar_crate.on_nth_tick = {
     [181] = process_inactive_crates
 }
 mortar_crate.on_init = function()
-    global.deployed_active_crates = global.deployed_active_crates or deployed_active_crates
-    global.deployed_inactive_crates = global.deployed_inactive_crates or deployed_inactive_crates
+    storage.deployed_active_crates = storage.deployed_active_crates or deployed_active_crates
+    storage.deployed_inactive_crates = storage.deployed_inactive_crates or deployed_inactive_crates
 end
 
 mortar_crate.on_load = function()
-    deployed_active_crates = global.deployed_active_crates or deployed_active_crates
-    deployed_inactive_crates = global.deployed_inactive_crates or deployed_inactive_crates
-end
-
-mortar_crate.on_configuration_changed = function(configuration_changed_data)
-    deployed_crate_migration()
+    deployed_active_crates = storage.deployed_active_crates or deployed_active_crates
+    deployed_inactive_crates = storage.deployed_inactive_crates or deployed_inactive_crates
 end
 
 mortar_crate.get_debug_data = function()
@@ -306,6 +293,8 @@ mortar_crate.get_debug_data = function()
     print('deployed_inactive_crates')
     print(tostring(deployed_inactive_crates.head) .. '/'.. tostring(deployed_inactive_crates.tail))
     print(deployed_inactive_crates.size)
+    print('storage data:')
+    print(serpent.block(storage))
 end
 
 mortar_crate.debug_list_inactive_motars = function()
