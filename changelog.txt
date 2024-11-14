@@ -5,6 +5,9 @@ Date: 2024-11-15
   Features:
     - Support shooting firework on spaceship.
 
+  Changes:
+    - Changed item weight to ship firework in full stack.
+
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2024-10-24

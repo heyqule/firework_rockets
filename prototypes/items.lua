@@ -16,7 +16,8 @@ data:extend({
         },
         subgroup = "firework-rockets",
         place_result = 'firework-mortar_crate',
-        stack_size = 50
+        stack_size = 50,
+        weight = 20*kg,
     },
     {
         type = "ammo",
@@ -61,7 +62,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -106,7 +108,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -151,7 +154,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -196,7 +200,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -241,7 +246,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -286,7 +292,8 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
     {
         type = "ammo",
@@ -331,6 +338,7 @@ data:extend({
             target_type = "position"
         },
         subgroup = "firework-rockets",
-        stack_size = 200
+        stack_size = 200,
+        weight = 5*kg,
     },
 })
