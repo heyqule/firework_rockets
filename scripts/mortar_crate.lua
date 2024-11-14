@@ -263,11 +263,13 @@ mortar_crate.events =
     [defines.events.script_raised_built] = on_created_entity,
     [defines.events.script_raised_revive] = on_created_entity,
     [defines.events.on_entity_cloned] = on_created_entity,
+    [defines.events.on_space_platform_built_entity] = on_created_entity,
 
     [defines.events.on_entity_died] = on_entity_removed,
     [defines.events.script_raised_destroy] = on_entity_removed,
     [defines.events.on_player_mined_entity] = on_entity_removed,
     [defines.events.on_robot_mined_entity] = on_entity_removed,
+    [defines.events.on_space_platform_mined_entity] = on_entity_removed,
 }
 
 mortar_crate.on_nth_tick = {
