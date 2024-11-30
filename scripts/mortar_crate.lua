@@ -7,7 +7,7 @@ require 'constant'
 local ScriptSharedFunctions = require 'shared'
 
 -- Track all deployed crates with rocket in inventory
--- When create don't have rocket, move to inactive list. 50 entity/check
+-- When create don't have rocket, move to inactive list. x entity/check
 -- { "surface.index-x-y" = {"prev", "next",  "entity", "next_tick"} }
 local deployed_active_crates = {
     head = nil,
@@ -27,6 +27,7 @@ local deployed_inactive_crates = {
 
 local MAX_ACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-active-batch'].value
 local MAX_INACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-inactive-batch'].value
+local MAX_ACTIVE_PROCESS_INTERVAL = settings.startup['firework-rocket-mortar-active-interval'].value
 local inactive_processing_id;
 local active_processing_id;
 
@@ -239,12 +240,14 @@ local process_inactive_crates = function(event)
         end
         local inventory = entity.get_inventory(defines.inventory.turret_ammo)
         local contents = inventory.get_contents()
+        
         for _, data in pairs(contents) do
-            if acceptable_rockets[data.name] and data.count > 0
+            if acceptable_rockets[data.name] and data.count > 0 and
+               entity.status == defines.entity_status.working
             then
                 add_crate(deployed_active_crates, inactive_processing_id, {
                     entity = turret.entity,
-                    next_tick = event.tick + math.random(3,6) * 61
+                    next_tick = event.tick + MAX_ACTIVE_PROCESS_INTERVAL
                 })
                 remove_crate(deployed_inactive_crates, inactive_processing_id)
             end
@@ -274,7 +277,7 @@ mortar_crate.events =
 
 mortar_crate.on_nth_tick = {
     [settings.startup['firework-rocket-mortar-active-interval'].value] = process_active_crates,
-    [181] = process_inactive_crates
+    [settings.startup['firework-rocket-mortar-inactive-interval'].value] = process_inactive_crates
 }
 mortar_crate.on_init = function()
     storage.deployed_active_crates = storage.deployed_active_crates or deployed_active_crates

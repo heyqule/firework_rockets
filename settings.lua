@@ -36,6 +36,15 @@ data:extend {
     },
     {
         type = "int-setting",
+        name = "firework-rocket-mortar-inactive-interval",
+        description = "firework-rocket-mortar-inactive-interval",
+        setting_type = "startup",
+        default_value = 181,
+        allowed_values = {13, 21, 33, 62, 121, 181, 301},
+        order = "firework-102"
+    },
+    {
+        type = "int-setting",
         name = "firework-rocket-mortar-inactive-batch",
         description = "firework-rocket-mortar-inactive-batch",
         setting_type = "startup",

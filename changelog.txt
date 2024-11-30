@@ -5,6 +5,7 @@ Date: 2024-11-29
   Changes:
     - Changed item weight to ship firework in full stack.
     - Support shooting firework on spaceship.
+    - Added "firework-rocket-mortar-inactive-interval" setting to control inactive queue timer.  Low interval may have performance implication. Use case: train/gate signal controlled firework         
 
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
