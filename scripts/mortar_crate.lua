@@ -28,6 +28,7 @@ local deployed_inactive_crates = {
 local MAX_ACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-active-batch'].value
 local MAX_INACTIVE_PER_BATCH = settings.startup['firework-rocket-mortar-inactive-batch'].value
 local MAX_ACTIVE_PROCESS_INTERVAL = settings.startup['firework-rocket-mortar-active-interval'].value
+local MORTAR_COOLDOWN = settings.startup['firework-rocket-mortar-cooldown'].value
 local inactive_processing_id;
 local active_processing_id;
 
@@ -161,9 +162,7 @@ local process_active_crates = function(event)
             })
             goto process_active_crates_for_continue
         end
-
-
-        local next_fire_interval = math.random(3,10) * 61
+        
         local max_range
         local inventory = entity.get_inventory(defines.inventory.turret_ammo)
         local contents = inventory.get_contents()
@@ -171,6 +170,8 @@ local process_active_crates = function(event)
         for _, data in pairs(contents) do
             if acceptable_rockets[data.name] and data.count > 0
             then
+                local next_fire_interval = math.ceil(MORTAR_COOLDOWN * math.random(0.8, 1.2))
+                
                 -- get mortar crate signal to determine the shooting timer
                 local time_signal = entity.get_signal({name=MORTAR_CRATE_SIGNAL, type='item'},defines.wire_connector_id.circuit_red,defines.wire_connector_id.circuit_green)
                 if time_signal > 0 then
@@ -198,7 +199,7 @@ local process_active_crates = function(event)
             end
         end
 
-        if not fired then
+        if not fired and turret.failed == 3 then
             add_crate(deployed_inactive_crates, active_processing_id, {
                 entity = turret.entity
             })

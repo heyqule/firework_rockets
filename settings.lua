@@ -54,6 +54,15 @@ data:extend {
         order = "firework-103"
     },
     {
+        type = "int-setting",
+        name = "firework-rocket-mortar-cooldown",
+        description = "firework-rocket-mortar-cooldown",
+        setting_type = "startup",
+        default_value = 181,
+        allowed_values = {13, 21, 33, 62, 121, 181, 303, 603},
+        order = "firework-104"
+    },
+    {
         type = "bool-setting",
         name = "firework-rocket-add-firework-regular-rocket",
         description = "firework-rocket-add-firework-regular-rocket",
