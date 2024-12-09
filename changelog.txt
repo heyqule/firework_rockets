@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
-Date: 2024-12-01
+Date: 2024-12-10
 
   Changes:
     - Mortar default cooldown can be changed in startup settings.  There is 20% random deviation.  Mortar timing circuit overrides this setting.   
