@@ -8,6 +8,6 @@
   "factorio_version": "2.1",
   "dependencies": [
     "base >= 2.1.0",
-    "firework_rockets_assets >= 2.0.0"
+    "firework_rockets_assets >= 2.1.0"
   ]
 }
